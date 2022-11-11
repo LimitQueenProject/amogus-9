@@ -2,7 +2,7 @@
 Program   : tictactoe-amogus-9.c
 Author    : 1. Farhan
             2. Roy
-            3. Azhar
+            3. Muhammad Azharuddin Hamid
 Tanggal   : 
 Versi     : v.1
 I.S.
