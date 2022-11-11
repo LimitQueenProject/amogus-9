@@ -8,3 +8,9 @@ Versi     : v.1
 I.S.
 F.S.
 */
+
+int main(){
+	
+	
+	return 0; // Roy Aziz Barera
+}
