@@ -62,11 +62,12 @@ int main()
 	
 	if ( pemenang == 1 )
 	{
-		printf("Selamat player 1 menang aokwokwkko kontol\n");
+		clear();
+		printf("Selamat %s menang!!! \n",player1);
 	}
 	else if ( pemenang == 2 )
 	{
-		printf("Selamat player 2 menang aokwokwkko MEMEK\n");
+		printf("Selamat %s menang!!! \n",player2);
 	}
 	else if ( pemenang == 3 )
 	{
