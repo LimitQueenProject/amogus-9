@@ -3,41 +3,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
-// Deklaration Struct for 2 player
-struct Game
-{	
-	int id_game;
-	int score1;
-	int score2;
-	char player1[100];
-	char player2[100];	
-} game[100];
-
-// Deklarasi Modular
-void player2();
-void printPapan();
-void inputNamaPlayer();
-void clear();
-void playgame();
-void mark();
-void replay();
-int cekPemenang();
-
-
-
-// Declaration Variabel Global
+#include "utama.h"
 char papan[11] = "0123456789";
 int game_id = 1;
 int giliran = 1;
-
-
-
-int main()
-{
-	player2();
-	return 0;
-}
 
 void player2()
 {
@@ -237,15 +206,12 @@ void inputNamaPlayer()
 void printPapan()
 {
 	printf("\n\n\n");
-    printf("___________________\n");	//papan
-    printf("|     |     |     |\n");
-    printf("|  %c  |  %c  |  %c  |\n",papan[1],papan[2],papan[3]);
-    printf("|_____|_____|_____|\n");
-    printf("|     |     |     |\n");
-    printf("|  %c  |  %c  |  %c  |\n",papan[4],papan[5],papan[6]);
-    printf("|_____|_____|_____|\n");
-    printf("|     |     |     |\n");
-    printf("|  %c  |  %c  |  %c  |\n",papan[7],papan[8],papan[9]);
-    printf("|_____|_____|_____|\n");
+    printf("  %c |  %c |  %c \n", papan[1], papan[2], papan[3]);
+    printf(" ___|____|____\n");
+    printf("    |    |     \n");
+    printf("  %c |  %c |  %c \n", papan[4], papan[5], papan[6]);
+    printf(" ___|____|____\n");
+    printf("    |    |     \n");
+    printf("  %c |  %c |  %c \n", papan[7], papan[8], papan[9]);
     printf("\n\n\n");
 }
