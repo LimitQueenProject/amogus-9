@@ -229,13 +229,16 @@ void inputNamaPlayer()
 void gameBoard()
 {
 	printf("\n\n\n");
-    printf("  %c |  %c |  %c \n", papan[1], papan[2], papan[3]);
-    printf(" ___|____|____\n");
-    printf("    |    |     \n");
-    printf("  %c |  %c |  %c \n", papan[4], papan[5], papan[6]);
-    printf(" ___|____|____\n");
-    printf("    |    |     \n");
-    printf("  %c |  %c |  %c \n", papan[7], papan[8], papan[9]);
+    printf("___________________\n");	//papan
+    printf("|     |     |     |\n");
+    printf("|  %c  |  %c  |  %c  |\n",papan[1],papan[2],papan[3]);
+    printf("|_____|_____|_____|\n");
+    printf("|     |     |     |\n");
+    printf("|  %c  |  %c  |  %c  |\n",papan[4],papan[5],papan[6]);
+    printf("|_____|_____|_____|\n");
+    printf("|     |     |     |\n");
+    printf("|  %c  |  %c  |  %c  |\n",papan[7],papan[8],papan[9]);
+    printf("|_____|_____|_____|\n");
     printf("\n\n\n");
 }
 
