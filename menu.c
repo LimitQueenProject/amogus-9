@@ -3,7 +3,9 @@
 
 #include "banner.h"
 #include "global.h"
+#include "menu.h"
 #include "pilihanPlayer.h"
+#include "pilihanPapan.h"
 
 
 void menu()
@@ -23,12 +25,19 @@ void cekMenu()
     switch (pilihanMenu)
     {
     case 1:
-        pilihanPlayer( );
-        cekPilihanPlayer();
+        bermain();
         break;
     
     default:
         printf("Belum ada\n");
         break;
     }
+}
+
+void bermain()
+{
+    pilihanPlayer();
+    cekPilihanPlayer();
+    pilihanPapan();
+    cekPilihanPapan();
 }

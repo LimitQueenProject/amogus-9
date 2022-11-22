@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "global.h"
 #include "banner.h"
+#include "global.h"
+#include "menu.h"
+#include "pilihan.h"
 #include "pilihanPlayer.h"
-#include "printPapan.h"
+#include "pilihanPapan.h"
 
 void pilihanPapan()
 {
@@ -17,20 +19,29 @@ void pilihanPapan()
     printf("2. Papan 5 x 5\n");
     printf("3. Papan 7 x 7\n");
     printf("99. Kembali\n");
-    printf("Masukan Pilihan Anda : ");
-    scanf("%d", &pilihPapanLokal );
+    pilihan(&pilihPapanGlobal);
+    // printf("Masukan Pilihan Anda : ");
+    // scanf("%d", &pilihPapanGlobal );
 }
 
 void cekPilihanPapan()
 {
-    switch (pilihPapanLokal)
+    switch (pilihPapanGlobal)
     {
     case 1:
-        printPapan33();
+        game[id].papan1 = true;
         break;
-    
+    case 2:
+        game[id].papan2 = true;
+        break;
+    case 3:
+        game[id].papan3 = true;
+        break;
+    case 99:
+        bermain();
+        break;
     default:
-        printf("Belum ada\n");
+        game[id].papan1 = true;
         break;
     }
 }

@@ -4,7 +4,9 @@
 #include "banner.h"
 #include "global.h"
 #include "menu.h"
-#include "printPapan.h"
+#include "pilihan.h"
+#include "pilihanPlayer.h"
+#include "pilihanPapan.h"
 
 void pilihanPlayer( )
 {
@@ -14,19 +16,19 @@ void pilihanPlayer( )
     printf("1. 1 Player (P vs Komputer)\n");
     printf("2. 2 Player (P vs P)\n");
     printf("99. Kembali\n");
-    printf("Masukan Pilihan Anda : ");
-    scanf("%d", &game[id].jenisPlayer );
+    pilihan(&game[id].jenisPlayer);
+    // printf("Masukan Pilihan Anda : ");
+    // scanf("%d", &game[id].jenisPlayer );
 }
 void cekPilihanPlayer()
 {
     switch (game[id].jenisPlayer)
     {
-    // case 1:
-    //     pilihanPlayer( );
-    //     cekPilihanPlayer();
-    //     break;
+    case 1:
+        game[id].jenisPlayer = 1;
+        break;
     case 2:
-        pilihanPapan();
+        game[id].jenisPlayer = 2;
         break;
     case 99:
         menu();
