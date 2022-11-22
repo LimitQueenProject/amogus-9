@@ -1,1 +1,0 @@
-void inputNamaPlayer( int _player, int _id );
