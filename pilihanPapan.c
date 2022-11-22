@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 
 #include "banner.h"
 #include "global.h"
@@ -29,19 +28,19 @@ void cekPilihanPapan()
     switch (pilihPapanGlobal)
     {
     case 1:
-        game[id].papan1 = true;
+        game[id].jenisPapan = 1;
         break;
     case 2:
-        game[id].papan2 = true;
+        game[id].jenisPapan = 2;
         break;
     case 3:
-        game[id].papan3 = true;
+        game[id].jenisPapan = 3;
         break;
     case 99:
         bermain();
         break;
     default:
-        game[id].papan1 = true;
+        game[id].jenisPapan = 1;
         break;
     }
 }

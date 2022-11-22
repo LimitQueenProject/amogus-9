@@ -16,9 +16,11 @@ struct Game
 
 	char papan[7][7]; // untuk papan matrik
 
-	bool papan1; // untuk papan matrik 3x3 jika true
-	bool papan2; // untuk papan matrik 5x5 jika true
-	bool papan3; // untuk papan matrik 7x7 jika true
+	int jenisPapan;
+
+	// bool papan1; // untuk papan matrik 3x3 jika true
+	// bool papan2; // untuk papan matrik 5x5 jika true
+	// bool papan3; // untuk papan matrik 7x7 jika true
 
     // bool inisialisasi; // kondisi untuk di cek jika inisialisasi sudah di lakukan
 };

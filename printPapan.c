@@ -7,7 +7,7 @@ void printPapan33()
     printf("-----------------");
     for ( int i = 0; i < 3; i++ )
     {
-        printf("%c %c %c", game[id].papan[i][0] , game[id].papan[i][1], game[id].papan[i][2]);
+        printf("%c %c %c\n", game[id].papan[i][0] , game[id].papan[i][1], game[id].papan[i][2]);
     }
     printf("-----------------");
 }
