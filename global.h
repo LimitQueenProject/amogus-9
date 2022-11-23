@@ -1,5 +1,5 @@
 #include <stdbool.h>
-struct Game
+typedef struct Game
 {
 	int game_id; // untuk save and load nanti
 
@@ -18,14 +18,10 @@ struct Game
 
 	int jenisPapan;
 
-	// bool papan1; // untuk papan matrik 3x3 jika true
-	// bool papan2; // untuk papan matrik 5x5 jika true
-	// bool papan3; // untuk papan matrik 7x7 jika true
-
     // bool inisialisasi; // kondisi untuk di cek jika inisialisasi sudah di lakukan
-};
+}Game;
 
-struct Game game[100]; // game yang memiliki maks id game hingga 100
+Game game[100]; // game yang memiliki maks id game hingga 100
 int id; // untuk mengisi save and load pada file id
 int pilihanMenu;
 int pilihPapanGlobal;
