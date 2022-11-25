@@ -1,1 +1,0 @@
-void pilihan( int *_pilihan );

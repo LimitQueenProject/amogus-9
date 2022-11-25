@@ -1,2 +1,0 @@
-void pilihanPlayer( );
-void cekPilihanPlayer( );
