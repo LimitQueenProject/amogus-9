@@ -33,6 +33,12 @@ typedef struct {
 */
 }Game;
 
+int CekMenu( int _flagMenu );
+int CekPlayer( int _flagPlayer );
+
+int panah( int _flagChoise );
+
+
 void banner1();
 /*Menampilkan tampilan awal seperti logo dan loading*/
 void banner2();
@@ -44,6 +50,19 @@ void tampilanMenu();
     2. How To Play
     3. About Us
 */
+
+void tampilanAwal();
+/*
+    I.S = belum ada tampilan awal game
+    F.S = sudah ada tampilan awal game
+*/
+
+
+void tampilanPlayer();
+
+
+void koor(int x, int y);
+
 
 void tampilanHowToPlay();
 /*Menampilkan cara bermain permainan Tic Tac Toe, yaitu sebagai berikut
@@ -60,18 +79,3 @@ void tampilanAboutUs();
 /*
 
 */
-
-void opening();
-/*
-    I.S = belum ada tampilan awal game
-    F.S = sudah ada tampilan awal game
-*/
-
-void listMenu();
-/*
-    I.S = belum ada tampilan menu
-    F.S = tampil isi dari pilihan menu
-
-    dan 
-*/
-
