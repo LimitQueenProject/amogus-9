@@ -67,9 +67,20 @@ void tampilanBoard()
 
 void tampilanHowToPlay()
 {
-    printf("Ini How To Play\n");
+    system("cls");
+    banner1();
+    koor(87,21);
+    printf("How To Play");
+    koor(45,23);
+    printf("cara maen nya gampang");
+
 }
 void tampilanAboutUs()
 {
-    printf("Ini About Us\n");
+    system("cls");
+    banner1();
+    koor(87,21);
+    printf("About Us");
+    koor(45,23);
+    printf("ini adalah wowo");
 }
