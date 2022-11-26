@@ -1,20 +1,27 @@
 
 #include <stdio.h>
 typedef struct {
-	char namaPlayer;    // nama dari player yang bermain
-	int scored;         // score atau poin dari pemain
-	int giliran;		// 1 untuk player dan 0 untuk lawan
+	char namaPlayer;        // nama dari player yang bermain
+	int score;              // score atau poin dari pemain
+	int giliran;		    // 1 untuk player dan 0 untuk lawan
 }Player;
 
 typedef struct {
-	char kotak[7][7];   // array yang dipakai untuk mengisi kotak tic tac toe
-	int jenisPapan;     // jenis papan, contoh : 3x3, 5x5, 7x7
+	char namaComputer;      // nama dari player yang bermain
+	int score;              // score atau poin dari pemain
+	int giliran;		    // 1 untuk player dan 0 untuk lawan
+    int tingkatKesulitan;
+}Computer;
+
+typedef struct {
+	char kotak[7][7];       // array yang dipakai untuk mengisi kotak tic tac toe
+	int jenisPapan;         // jenis papan, contoh : 3x3, 5x5, 7x7
 }Board;
 
 typedef struct {
 	int id_game;  
 /*
-    id game adalah kode atau no permainan yang mana akan di inputkan 
+    id game adalah kode atau nomer permainan yang mana akan di inputkan 
     ketika load game dan disimpan ketika save game
 */
     Player pemain[2];
@@ -22,6 +29,10 @@ typedef struct {
     pemain adalah array integer bertipe Player yang digunakan 
     untuk permainan player versus player
 */    
+    Computer com;
+/*  com adalah variabel bertipe Computer yang digunakan untuk 
+    computer atau AI
+*/
     Board papan;
 /*
     papan adalah tempat permainan tictactoe berlangsung
@@ -33,16 +44,23 @@ typedef struct {
 */
 }Game;
 
+Game game[1000];
+
+void playGame( int _flagGame );
+
 int CekMenu( int _flagMenu );
+
 int CekPlayer( int _flagPlayer );
 
-int panah( int _flagChoise );
+int panah( int _flagChoice );
 
+
+void inisialisasi();
 
 void banner1();
 /*Menampilkan tampilan awal seperti logo dan loading*/
 void banner2();
-/*Menampilkan tampilan awal seperti logo dan loading*/
+/*Menampilkan tampilan ketika permainan sudah di mulai*/
 
 void tampilanMenu();
 /*Menampilkan pilihan menu sebagai berikut :
@@ -60,6 +78,9 @@ void tampilanAwal();
 
 void tampilanPlayer();
 
+void tingkatKesulitan();
+
+void tampilanBoard();
 
 void koor(int x, int y);
 
@@ -77,5 +98,15 @@ void tampilanHowToPlay();
 
 void tampilanAboutUs();
 /*
+    1. Farhan Muhammad yasin
+        NIM = 221524008
+        Instagram = 
+    2. Muhammad Azharuddin Hamid
+        NIM = 221524018
+        Instagram =
+    3. Roy Aziz Barera
+        NIM = 221524030
+        Instagram =
 
+    Institusi = Polikteknik Negeri Bandung
 */

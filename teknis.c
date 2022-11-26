@@ -13,11 +13,11 @@ void koor(int x, int y)
 }
 
 
-int panah( int _flagChoise )
+int panah( int _flagChoice )
 {
-    int panx=69,pany=22,button;
+    int panx=81,pany=22,button;
 
-    if ( _flagChoise == 1 ) // khusus menu
+    if ( _flagChoice == 1 ) // khusus menu
     {
         do 
         {
@@ -36,6 +36,9 @@ int panah( int _flagChoise )
                         pany = 24;
                         break;
                     case 24 :
+                        pany = 25;
+                        break;
+                    case 25 :
                         pany = 22;
                         break;
                 }
@@ -45,13 +48,16 @@ int panah( int _flagChoise )
                 switch(pany) 
                 {
                     case 22 :
-                        pany = 24;
+                        pany = 25;
                         break;
                     case 23 :
                         pany = 22;
                         break;
                     case 24 :
                         pany = 23;
+                        break;
+                    case 25 :
+                        pany = 24;
                         break;
                 }
             }
@@ -64,13 +70,15 @@ int panah( int _flagChoise )
             return 2;
         else if ( pany == 24 )
             return 3;
+        else if ( pany == 25 )
+            return 0;
     }
     
-    else if ( _flagChoise == 2 )
+    else if ( _flagChoice == 2 )
     {   
         do 
         {
-            void tampilanPlayer();
+            tampilanPlayer();
             koor(panx,pany);
             printf("%c%c",205,62);
             button = getch();
@@ -112,6 +120,117 @@ int panah( int _flagChoise )
         else if ( pany == 23 )
             return 2;
         else if ( pany == 24 )
+            return 0;
+    }
+    else if ( _flagChoice == 21)
+    {
+        do 
+        {
+            tingkatKesulitan();
+            koor(panx,pany);
+            printf("%c%c",205,62);
+            button = getch();
+            if(button == 80) 
+            {
+                switch(pany) 
+                {
+                    case 22 :
+                        pany = 23;
+                        break;
+                    case 23 :
+                        pany = 24;
+                        break;
+                    case 24 :
+                        pany = 25;
+                        break;
+                    case 25 :
+                        pany = 22;
+                        break;
+                }
+            }
+            else if(button == 72) 
+            {
+                switch(pany) 
+                {
+                    case 22 :
+                        pany = 25;
+                        break;
+                    case 23 :
+                        pany = 22;
+                        break;
+                    case 24 :
+                        pany = 23;
+                        break;
+                    case 25 :
+                        pany = 24;
+                        break;
+                }
+            }
+        }
+        while(button != 13);
+
+        if ( pany == 22 )
+            return 1;
+        else if ( pany == 23 )
+            return 2;
+        else if ( pany == 24 )
+            return 3;
+        else if ( pany == 25 )
+            return 0;
+    }
+    else if ( _flagChoice == 22)
+    {
+                do 
+        {
+            tampilanBoard();
+            koor(panx,pany);
+            printf("%c%c",205,62);
+            button = getch();
+            if(button == 80) 
+            {
+                switch(pany) 
+                {
+                    case 22 :
+                        pany = 23;
+                        break;
+                    case 23 :
+                        pany = 24;
+                        break;
+                    case 24 :
+                        pany = 25;
+                        break;
+                    case 25 :
+                        pany = 22;
+                        break;
+                }
+            }
+            else if(button == 72) 
+            {
+                switch(pany) 
+                {
+                    case 22 :
+                        pany = 25;
+                        break;
+                    case 23 :
+                        pany = 22;
+                        break;
+                    case 24 :
+                        pany = 23;
+                        break;
+                    case 25 :
+                        pany = 24;
+                        break;
+                }
+            }
+        }while(button != 13);
+        
+        if ( pany == 22 )
+            return 1;
+        else if ( pany == 23 )
+            return 2;
+        else if ( pany == 24 )
+            return 3;
+        else if ( pany == 25 )
             return 0;
     }
 }
