@@ -3,6 +3,21 @@
 
 #include "header.h"
 
+void PilihIndex(char _mark[])
+{
+    printf("%s, Masukan Pilihan Anda : ");
+    scanf(" %s", _mark);
+}
+
+
+
+
+
+
+
+
+
+
 void playGame (int _flagGame)
 {
     system("cls");

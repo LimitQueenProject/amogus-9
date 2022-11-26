@@ -46,6 +46,15 @@ typedef struct {
 
 Game game[1000];
 
+void DisplayPapan3x3(int _id);
+
+void DisplayPapan5x5(int _id);
+
+void DisplayPapan7x7(int _id);
+
+void PilihIndex(char *_mark);
+
+
 void playGame( int _flagGame );
 
 int CekMenu( int _flagMenu );

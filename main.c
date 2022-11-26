@@ -17,61 +17,85 @@ int main()
     int id=0;
     int i;
     int pilihanMenu;
-    bool statusMenu = true;
-    bool statusPlayer = true;
-    bool statusLevel = true;
+    bool statusMenu = true; // kondisi perulangan tetap dijalankan
+    bool statusPlayer = true; // kondisi perulangan tetap dijalankan
+    bool statusLevel = true; // kondisi perulangan tetap dijalankan
+    char index[2];
+
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            game[id].papan.kotak[i][j]=' ';
+        }
+    }
     
     // Seting Layar menjadi full screen
     system("mode 800");
 
-    // 1. Halaman awal
+    // 1. Laman Inisialisasi Pada Game
+    /*
+        Mengisi
+        jenisPlayer
+        jenisPapan
+        scorePlayer1
+        scorePlayer2
+        scoreComputer
+    */
+
+    // Looping Halaman Menu
     do
     {
-        pilihanMenu = panah(1);
+        pilihanMenu = panah(1); /*  fungsi panah itu sebagai tampilan segala jenis pemilihan player, papan, level, menu  */
 
         switch (pilihanMenu){
+            // jika memilih Play Game maka case 1
             case 1 : 
                 do
                 {
                     statusPlayer = true;
-                    game[id].jenisPlayer = panah(2);
+                    game[id].jenisPlayer = panah(2); 
+                    
                         switch (game[id].jenisPlayer)
                         {
+                            // jika memilih jenis player 1
                             case 1 :
                                 do
                                 {
-                                statusLevel = true;
-                                game[id].com.tingkatKesulitan = panah(21);
-                                switch (game[id].com.tingkatKesulitan)
-                                {
-                                    case 1 :
-                                        game[id].papan.jenisPapan = panah(22);
-                                        if( game[id].papan.jenisPapan == 0)
-                                            statusLevel = true;
-                                        else {
-                                        statusPlayer = false;
-                                        statusLevel = false;}
-                                        break;
-                                    case 2 : 
-                                        game[id].papan.jenisPapan = panah(22);
-                                        if( game[id].papan.jenisPapan == 0)
-                                            statusLevel = true;
-                                        else {
-                                        statusPlayer = false;
-                                        statusLevel = false;}
-                                        break;
-                                    case 3 : 
-                                        game[id].papan.jenisPapan = panah(22);
-                                        if( game[id].papan.jenisPapan == 0)
-                                            statusLevel = true;
-                                        else {
-                                        statusPlayer = false;
-                                        statusLevel = false;}
-                                        break;
-                                    case 0 :
-                                        statusLevel = false;
-                                        break;
-                                }
+                                    statusLevel = true;
+                                    game[id].com.tingkatKesulitan = panah(21);
+
+                                    switch (game[id].com.tingkatKesulitan)
+                                    {
+                                        case 1 :
+                                            game[id].papan.jenisPapan = panah(22);
+                                            if ( game[id].papan.jenisPapan == 0)
+                                                statusLevel = true;
+                                            else {
+                                                statusPlayer = false;
+                                                statusLevel = false;
+                                            }
+                                            break;
+                                        case 2 : 
+                                            game[id].papan.jenisPapan = panah(22);
+                                            if( game[id].papan.jenisPapan == 0)
+                                                statusLevel = true;
+                                            else {
+                                                statusPlayer = false;
+                                                statusLevel = false;
+                                            }
+                                            break;
+                                        case 3 : 
+                                            game[id].papan.jenisPapan = panah(22);
+                                            if( game[id].papan.jenisPapan == 0)
+                                                statusLevel = true;
+                                            else {
+                                                statusPlayer = false;
+                                                statusLevel = false;
+                                            }
+                                            break;
+                                        case 0 :
+                                            statusLevel = false;
+                                            break;
+                                    }
                                 }while (statusLevel);
                                 break;
                             case 2 :
@@ -93,8 +117,9 @@ int main()
                 do
                 {
                     button1 = getch();
-                } while ( button1 != 13 );
+                }while ( button1 != 13 );
                 break;
+
             case 3 : 
                 tampilanAboutUs();
                 int button2;
@@ -103,22 +128,30 @@ int main()
                     button2 = getch();
                 } while ( button2 != 13 );
                 break;
+
             case 0 : 
                 statusMenu = false;
                 break;
         } 
 
-    if ( game[id].jenisPlayer == 1 && game[id].com.tingkatKesulitan == 1 && game[id].papan.jenisPapan == 1 )
+    if ( game[id].jenisPlayer == 2 && game[id].papan.jenisPapan == 1 )
     {
-        playGame(111);
+        int a =0;
+        while ( a < 2 )
+        {
+            system("cls");
+            DisplayPapan3x3(id);
+            PilihIndex(index);
+            if ( index == "A1" )
+                game[id].papan.kotak[0][0] = 'X';
+        }
+
+
+
         int i;
         scanf("%d",&i);
-        statusMenu = false;
     }
-    else if ( game[id].jenisPlayer == 1 && game[id].com.tingkatKesulitan == 1 && game[id].papan.jenisPapan == 2 )
-    {
-        playGame(112);
-    }
+
 
 
 
