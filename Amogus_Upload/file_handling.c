@@ -4,16 +4,23 @@
 
 #include "header.h"
 
+void highscore()
+{
+    // DEKLARASI
+    FILE *file1;
+    Game tempgame;
+
+    // 1. BUKA FILE LALU SALIN KE PENYIMPANAN LOKAL DI RAM
+    
+    
+    
+}
+
 void tampilkanData()
 {
     int max_id;
     FILE *file;
     Game _game;
-
-    // MEMBACA ID TERBESAR SAAT INI
-    // file = fopen("id.dat", "rb");
-    // fread(&max_id, sizeof(int), 1, file);
-    // fclose(file);
 
     file = fopen("data.dat", "rb");
     while (fread(&_game, sizeof(Game), 1, file))
@@ -113,7 +120,8 @@ void saveData(Game _game)
         }
     }
     fwrite(&_game, sizeof(Game), 1, file2);
-
+    printf("\nData Berhasil Di Simpan\n");
+    sleep(2);
     fclose(file1);
     fclose(file2);
     remove("data.dat");

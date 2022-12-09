@@ -16,12 +16,6 @@ void playgame(Game *game)
 
     do
     {
-        // 0. PILIH SIAPA YANG PERTAMA
-        // if (kondisiPilihGiliranPertama == true)
-        // {
-        //     pilihHalaman(111, &tempgame.pilihPertama); // Tampil halaman pilih giliran
-        //     kondisiPilihGiliranPertama = false;
-        // }
         // 1. BERSIHKAN LAYAR
         system("cls");
 
@@ -38,11 +32,9 @@ void playgame(Game *game)
         markIndex(tempgame.giliran, tempgame.pilihPertama, &tempgame.papan.kotak, baris, kolom);
 
         // // 6. CEK PEMENANG
-        // cekKondisiPemenang(tempgame.papan.jenisPapan, tempgame.papan.kotak, &pemenang, &kondisiPemenang, tempgame.giliran, &tempgame.pemain1.score, &tempgame.pemain2.score);
         tempgame.pemenang = cekPemenang(tempgame.papan.jenisPapan, tempgame.papan.kotak);
-        // printf("Pemenang : %d", tempgame.pemenang);
-        // int o = getch();
 
+        // // 7. TAMBAHKAN SCORE PEMENANG JIKA ADA
         if ( tempgame.pemenang == 1 ){
             tempgame.pemain1.score++;
         }
@@ -50,25 +42,11 @@ void playgame(Game *game)
             tempgame.pemain2.score++;
         }
 
-        // // 7. GANTI GILIRAN
+        // // 8. GANTI GILIRAN
         tempgame.giliran++;
 
-        // // 8. TAMPILKAN PEMENANG
-        // if (kondisiPemenang == true)
-        // {
-        //     system("cls");
-        //     dashboard(tempgame.pemain1.namaPlayer, tempgame.pemain2.namaPlayer, tempgame.pilihPertama, tempgame.giliran, tempgame.pemain1.score, tempgame.pemain2.score, tempgame.id_game);
-        //     printPapan(tempgame.papan.jenisPapan, tempgame.papan.kotak);
-        //     do
-        //     {
-                // tampilWinorDraw(tempgame.pemain1.namaPlayer, tempgame.pemain2.namaPlayer, pemenang, tempgame.giliran, tempgame.papan.jenisPapan);
-                // setelahCekMenang(tempgame, &kondisiGame, &kondisiPemenang, &kondisiPilihGiliranPertama, &kondisiPilihanPapan, &kondisiPilihanPlayer, &kondisiAfterGame);
-        //     } while (kondisiAfterGame == true);
-        //     kondisiAfterGame == true;
-            // resetAtributPlayGame(&pemenang, &tempgame.giliran, &tempgame.pilihPertama, &tempgame.papan.kotak, &kondisiPemenang);
-        // }
-
     } while (tempgame.pemenang == -1 && tempgame.giliran <= tempgame.papan.jenisPapan*tempgame.papan.jenisPapan);
+        
         // 1. BERSIHKAN LAYAR
         system("cls");
 

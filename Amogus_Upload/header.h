@@ -82,7 +82,7 @@ void inisialisasi( Game *game );
 int isiID();
 
 // KATEGORI PLAY GAME
-// PLAY GAME
+// PLAY GAME > DONE
 void playgame(Game *game);
 
 // PILIH INDEX > DONE
@@ -91,24 +91,28 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
 // MARK INDEX > DONE
 void markIndex(int _giliran, int _pilihPertama, char (*_papanKotak)[7][7], int _baris, int _kolom );
 
-// CEK PEMENANG
+// CEK PEMENANG 
 int cekPemenang(int _jenisPapan, char kotak[7][7]);
 
-// RESET ATRIBUT
+// RESET ATRIBUT > DONE
 void resetAtributPlayGame(int *_pemenang, int *_giliran, char (*_papan)[7][7]);
 
 // SETELAH CEK PEMENANG
 void setelahCekMenang(Game _game, int *_halaman, bool *_maingame, bool *_kondisiSetelahMenang, bool *_kondisiGantiGiliran, bool *_kondisiInisialisasi);
 
 // KATEGORI FILE HANDLING
-// FILE HANDLING
+// FILE HANDLING > DONE
 void saveData( Game _game );
 
-//LOAD DATA
+//LOAD DATA > DONE
 void loadGame( Game *game, bool *_kondisiLoadgame );
 
-// TAMPILKAN DATA YANG DI BISA DI LOAD
+// TAMPILKAN DATA YANG DI BISA DI LOAD > DONE
 void tampilkanData();
+
+// HIGSCORE
+
+
 
 // typedef struct
 // {
