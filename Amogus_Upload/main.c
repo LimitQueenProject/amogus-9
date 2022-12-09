@@ -63,7 +63,7 @@ int main()
                     }
                 }
                 else if ( pilihan == highscore ){
-                    halaman = highscore;
+                    highScore();
                 }
                 else if ( pilihan == howtoplay ){
                     halaman = howtoplay;

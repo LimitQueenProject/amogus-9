@@ -111,7 +111,7 @@ void loadGame( Game *game, bool *_kondisiLoadgame );
 void tampilkanData();
 
 // HIGSCORE
-
+void highScore();
 
 
 // typedef struct

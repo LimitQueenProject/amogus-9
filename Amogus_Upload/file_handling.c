@@ -1,18 +1,45 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 #include "header.h"
 
-void highscore()
+void highScore()
 {
     // DEKLARASI
-    FILE *file1;
-    Game tempgame;
+    typedef struct{
+        char namaPlayer[20];
+        int score;
+    }DATA;
 
-    // 1. BUKA FILE LALU SALIN KE PENYIMPANAN LOKAL DI RAM
+    FILE *file1;
+    DATA data[1000];
+    Game tempGame;
+
+    // 1. CEK JUMLAH DATA YANG TERSIMPAN
+    file1 = fopen("data.dat","rb");
+
+
+    // 2. SALIN NAMA DAN SCORE DARI TIAP TIAP PEMAIN
+    int i = 0;
+    while (fread(&tempGame, sizeof(Game), 1, file1))
+    {
+        strcpy(data[i].namaPlayer, tempGame.pemain1.namaPlayer);
+        data[i].score = tempGame.pemain1.score;
+        strcpy(data[i+1].namaPlayer, tempGame.pemain2.namaPlayer);
+        data[i+1].score = tempGame.pemain2.score;
+        i+=2;
+    }
+    fclose(file1);
+    system("cls");
+    for (int j = 0; j < i; j++)
+    {
+        printf("\n\n%d. %s\t\t:%d\n", j+1, data[j].namaPlayer, data[j].score);
+    }
+    int p = getch();
     
-    
+    //
     
 }
 
@@ -52,6 +79,13 @@ void loadGame(Game *game, bool *_kondisiLoadgame)
 
     do{
         file1 = fopen("data.dat","rb");
+
+        if ( file1 == NULL )
+        {
+            printf("Data Masih Kosong");
+            getchar();
+        }
+        else{
             tampilkanData();
 
             printf("\nMasukan id yang akan di load : ");
@@ -94,6 +128,7 @@ void loadGame(Game *game, bool *_kondisiLoadgame)
                     kondisiCariLagi = true;
                 }
             }
+        }
         fclose(file1);
     }while(kondisiCariLagi == true);
 
