@@ -1646,8 +1646,7 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                     cekValid = 1;
                 }
             }
-            while (cekValid == 0)
-                ;
+            while (cekValid == 0);
         }
     }
 }

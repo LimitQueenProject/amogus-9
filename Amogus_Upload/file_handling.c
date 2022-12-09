@@ -6,7 +6,7 @@
 #include "header.h"
 
 void highScore()
-{
+{   
     // DEKLARASI
     typedef struct{
         char namaPlayer[20];
@@ -14,7 +14,7 @@ void highScore()
     }DATA;
 
     FILE *file1;
-    DATA data[1000];
+    DATA data[10000];
     Game tempGame;
 
     // 1. CEK JUMLAH DATA YANG TERSIMPAN
