@@ -9,45 +9,25 @@ int main()
     // Deklarasi Variabel
     // 1. Deklarasi Variabel Komponen Penyusun Game
     Game game;
-    // int pemenang = -1;
-    // 0
+
     #define menu 0
-    // 1
     #define newgame 1
-    // 1.1
     #define _1player 1
-    // 1.2
     #define _2player 2
-    // 1.3
     #define pilihpapan 11
-    // 1.3.1
     #define papan3x3 3
-    // 1.3.2
     #define papan5x5 5
-    // 1.3.3
     #define papan7x7 7
-
-    // 1.4
     #define pilihpertama 111
-    // 1.4.1
     #define player1_pertama 1
-    // 1.4.2
     #define player2_pertama 2
-
-
-    // 2
     #define loadgame 2
-    // 3
     #define highscore 3
-    // 4
     #define howtoplay 4
-    // 5
     #define aboutus 5
-    // -1
     #define keluar -1
 
 
-    
     // 2. Deklarasi Variabel Kondisi-Kondisi Halaman
     bool kondisiHalaman = true;
     int halaman = 0;
