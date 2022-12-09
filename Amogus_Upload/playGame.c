@@ -69,6 +69,14 @@ void playgame(Game *game)
         // }
 
     } while (tempgame.pemenang == -1 && tempgame.giliran <= tempgame.papan.jenisPapan*tempgame.papan.jenisPapan);
+        // 1. BERSIHKAN LAYAR
+        system("cls");
+
+        // // 2. TAMPILKAN DASHBOARD KE LAYAR
+        dashboard(tempgame.pemain1.namaPlayer, tempgame.pemain2.namaPlayer, tempgame.pilihPertama, tempgame.giliran, tempgame.pemain1.score, tempgame.pemain2.score, tempgame.id_game);
+
+        // // 3. TAMPILKAN PAPAN {JENIS PAPAN} KE LAYAR
+        printPapan(tempgame.papan.jenisPapan, tempgame.papan.kotak);
 
     *game = tempgame;
     

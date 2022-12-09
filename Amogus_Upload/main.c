@@ -124,9 +124,6 @@ int main()
             }
             
             playgame(&game);
-            // system("cls");
-            // dashboard(game.pemain1.namaPlayer, game.pemain2.namaPlayer, game.pilihPertama, game.giliran, game.pemain1.score, game.pemain2.score, game.id_game);
-            // printPapan(game.papan.jenisPapan, game.papan.kotak);
             do{
                 tampilWinorDraw(game.pemain1.namaPlayer, game.pemain2.namaPlayer, game.pemenang, game.giliran, game.papan.jenisPapan);
                 setelahCekMenang(game, &halaman, &maingame, &kondisiSetelahMenang, &kondisiGantiGiliran, &game.kondisiInisialisasi);
