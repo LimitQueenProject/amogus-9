@@ -27,8 +27,6 @@ int main()
     #define aboutus 5
     #define keluar -1
 
-
-    // 2. Deklarasi Variabel Kondisi-Kondisi Halaman
     bool kondisiHalaman = true;
     int halaman = 0;
     int pilihan = 0;
@@ -61,8 +59,8 @@ int main()
                     if ( kondisiLoadgame == true ){
                         maingame = true;
                         game.kondisiInisialisasi = false;
+                        kondisiLoadgame = false;
                     }
-
                 }
                 else if ( pilihan == highscore ){
                     halaman = highscore;
@@ -126,11 +124,11 @@ int main()
             }
             
             playgame(&game);
-            system("cls");
-            dashboard(game.pemain1.namaPlayer, game.pemain2.namaPlayer, game.pilihPertama, game.giliran, game.pemain1.score, game.pemain2.score, game.id_game);
-            printPapan(game.papan.jenisPapan, game.papan.kotak);
-            tampilWinorDraw(game.pemain1.namaPlayer, game.pemain2.namaPlayer, game.pemenang, game.giliran, game.papan.jenisPapan);
+            // system("cls");
+            // dashboard(game.pemain1.namaPlayer, game.pemain2.namaPlayer, game.pilihPertama, game.giliran, game.pemain1.score, game.pemain2.score, game.id_game);
+            // printPapan(game.papan.jenisPapan, game.papan.kotak);
             do{
+                tampilWinorDraw(game.pemain1.namaPlayer, game.pemain2.namaPlayer, game.pemenang, game.giliran, game.papan.jenisPapan);
                 setelahCekMenang(game, &halaman, &maingame, &kondisiSetelahMenang, &kondisiGantiGiliran, &game.kondisiInisialisasi);
             }while(kondisiSetelahMenang == true );
 
