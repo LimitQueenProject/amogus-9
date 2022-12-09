@@ -15,6 +15,7 @@ void highScore()
 
     FILE *file1;
     DATA data[10000];
+    DATA tempData;
     Game tempGame;
 
     // 1. CEK JUMLAH DATA YANG TERSIMPAN
@@ -32,6 +33,21 @@ void highScore()
         i+=2;
     }
     fclose(file1);
+
+    // URUTKAN DATA DARI YANG PALING BESAR KE TERKECIL
+    for ( int j = 0; j < i; j++ )
+    {
+        for ( int k = 0; k < i-1; k++ )
+        {
+            if( data[k].score < data[k+1].score )
+            {
+                tempData = data[k];
+                data[k] = data[k+1];
+                data[k+1] = tempData;
+            }
+        }
+    }
+
     system("cls");
     for (int j = 0; j < i; j++)
     {
