@@ -43,7 +43,7 @@ int main()
     MoveWindow(hWnd, 180, 50, 1000, 600, TRUE);
 
     // 2. Menampilkan Loading Game Agar Keren
-    // loading();
+    loading();
 
     do{
         
