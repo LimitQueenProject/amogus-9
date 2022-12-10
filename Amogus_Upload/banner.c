@@ -104,11 +104,11 @@ void dashboard(char _namaPlayer1[100], char _namaPlayer2[100], int _pertama, int
 	koor(56, 4);
 	printf("Giliran ke : %d ", _giliran);
 	koor(56, 5);
-	if (_pertama == 1)
+	if (_giliran %2 == 1)
 	{
 		printf("Giliran : %s ", _namaPlayer1);
 	}
-	else if (_pertama == 2)
+	else if (_giliran %2 == 0)
 	{
 		printf("Giliran : %s ", _namaPlayer2);
 	}
