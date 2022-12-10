@@ -226,7 +226,7 @@ void inputNama( int _jenisPermainanPlayer, char (*_namaPlayer1)[20], char (*_nam
             }
             else{
                 koor(43,19); printf("Nama anda terlalu panjang silahkan input ulang");
-                sleep(2);
+                sleep(1);
             }
         }while(valid == 0);
         strcpy(*_namaPlayer2, "Computer");
@@ -247,7 +247,7 @@ void inputNama( int _jenisPermainanPlayer, char (*_namaPlayer1)[20], char (*_nam
             }
             else{
                 koor(43,19); printf("Nama anda terlalu panjang silahkan input ulang\n");
-                sleep(2);
+                sleep(1);
             }
         }while(valid == 0);
         valid = 0;
@@ -258,7 +258,7 @@ void inputNama( int _jenisPermainanPlayer, char (*_namaPlayer1)[20], char (*_nam
 
             // Tampilkan Banner 2
             banner2();
-            
+
             koor(45,17); printf("Masukan nama player 2 : ");
             scanNama(&*_namaPlayer2);
             if ( strlen(*_namaPlayer2) <= 20 ){
@@ -266,7 +266,7 @@ void inputNama( int _jenisPermainanPlayer, char (*_namaPlayer1)[20], char (*_nam
             }
             else{
                 koor(43,17); printf("Nama anda terlalu panjang silahkan input ulang\n");
-                sleep(2);
+                sleep(1);
             }
         }while(valid == 0);
     }
