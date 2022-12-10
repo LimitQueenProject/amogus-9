@@ -43,8 +43,13 @@ int main()
     MoveWindow(hWnd, 180, 50, 1000, 600, TRUE);
 
     // 2. Menampilkan Loading Game Agar Keren
+<<<<<<< HEAD
     loading();
 
+=======
+    // loading();
+    system("color 50");
+>>>>>>> d463b0889f27f69216cf4001a33ec28bf2c6127a
     do{
         
         switch (halaman){
