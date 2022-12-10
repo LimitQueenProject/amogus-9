@@ -46,7 +46,6 @@ int main()
     loading();
 
     // loading();
-    system("color 50");
     do{
         
         switch (halaman){
