@@ -10,7 +10,7 @@ void medium( int _jenisPapan, int *_baris, int *_kolom, char _papan[7][7] )
     typedef struct{
         int baris;
         int kolom;
-        bool indexValid;
+        // bool indexValid;
     }Index;
 
     Index index[9];
@@ -48,22 +48,24 @@ void medium( int _jenisPapan, int *_baris, int *_kolom, char _papan[7][7] )
     for( i = 1; i <= 8; i++ )
     {
         if( index[i].baris >= 0 && index[i].kolom >= 0 && _papan[index[i].baris][index[i].kolom] == ' '){
-            index[i].indexValid = true;
+            *_baris = index[i].baris;
+            *_kolom = index[i].kolom;
+            
+            // index[i].indexValid = true;
             k++;
-            j[k] = i;
+            // j[k] = i;
         }
-        else{
-            index[i].indexValid = false;
-        }
+        // else{
+        //     // index[i].indexValid = false;
+        // }
     }
 
-    if ( k == -1 ){
-        srand(time(0));
-        i = rand() % (j[k]-j[0]) + j[0];
+    // if ( k != -1 ){
+    //     srand(time(0));
+    //     i = rand() % (j[k]-j[0]) + j[0];
         
-        *_baris = index[i].baris;
-        *_kolom = index[i].kolom;
-    }else{
+    // }else
+    if( k == -1 ){
         int randomBaris;
         int randomKolom;
         bool validIndex = false ;
