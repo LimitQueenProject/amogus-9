@@ -42,7 +42,7 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
             int baris = *_baris;
             int kolom = *_kolom;
             // pilihIndexKomputer(_jenisPapan, &baris, &kolom, _papan);
-            medium(&baris, &kolom, _papan);
+            medium(_jenisPapan, &baris, &kolom, _papan);
             *_baris = baris;
             *_kolom = kolom;
         }
