@@ -99,6 +99,7 @@ void setelahCekMenang(Game _game, int *_halaman, bool *_maingame, bool *_kondisi
         resetAtributPlayGame(&_game.pemenang, &_game.giliran, &_game.papan.kotak);
         saveData(_game);
         *_kondisiSetelahMenang = true;
+        koor(panx,pany);printf("   ");
     }
     // menu
     else if (pany == 13)

@@ -68,7 +68,14 @@ void tampilkanData()
     file = fopen("data.dat", "rb");
     while (fread(&_game, sizeof(Game), 1, file))
     {
+        system("cls");
+        koor(50,2);
         printf("\nData Ditemukan\n");
+        sleep(2);
+        koor(0,1);
+        printf("\n              \n");
+        system("cls");
+        koor(0,4);
         printf("ID Game : %d\n", _game.id_game);
         printf("%s VS %s\n", _game.pemain1.namaPlayer, _game.pemain2.namaPlayer);
         printf("Score %s\t: %d\n", _game.pemain1.namaPlayer, _game.pemain1.score);
@@ -98,19 +105,21 @@ void loadGame(Game *game, bool *_kondisiLoadgame)
 
         if ( file1 == NULL )
         {
-            printf("Data Masih Kosong");
+            system("cls");
+            printf("\nData Masih Kosong");
             getchar();
         }
         else{
             tampilkanData();
 
+            koor(0,1);
             printf("\nMasukan id yang akan di load : ");
             scanf("%d", &_id);
-
             while(fread(&tempGame, sizeof(Game),1,file1))
             {
                 if ( tempGame.id_game == _id )
                 {
+                    system("cls");
                     printf("\nData Bisa Di Load\n");
                     printf("ID Game : %d\n", tempGame.id_game);
                     printf("%s VS %s\n", tempGame.pemain1.namaPlayer, tempGame.pemain2.namaPlayer);
@@ -141,7 +150,7 @@ void loadGame(Game *game, bool *_kondisiLoadgame)
                 printf("\nTekan Tombol Enter Untuk Mencari Data lain...");
                 int b = getch();
                 if( b == 13 ){ 
-                    kondisiCariLagi = true;
+                    kondisiCariLagi = false;
                 }
             }
         }
@@ -171,8 +180,11 @@ void saveData(Game _game)
         }
     }
     fwrite(&_game, sizeof(Game), 1, file2);
+    koor(55,27);
     printf("\nData Berhasil Di Simpan\n");
     sleep(2);
+    koor(55,27);
+    printf("\n                       \n");
     fclose(file1);
     fclose(file2);
     remove("data.dat");

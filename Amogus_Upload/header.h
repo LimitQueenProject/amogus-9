@@ -57,7 +57,6 @@ void tampilSetelahBermain();
 void tampilanPilihPertama();
 void tampilWinorDraw(char _namaPlayer1[20], char _namaPlayer2[20], int _pemenang, int _giliran, int _jenisPapan);
 
-
 // LOADING > DONE
 void loading();
 
@@ -81,6 +80,10 @@ void pilihHalaman( int _flagHalaman, int *_pilihanHalaman );
 void inisialisasi( Game *game );
 int isiID();
 
+// Input Nama
+void inputNama( int _jenisPermainanPlayer, char (*_namaPlayer1)[20], char (*_namaPlayer2)[20]);
+void scanNama( char (*_namaPlayer)[20]);
+
 // KATEGORI PLAY GAME
 // PLAY GAME > DONE
 void playgame(Game *game);
@@ -89,6 +92,7 @@ void playgame(Game *game);
 void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPertama, char _papan[7][7], int *_baris, int *_kolom);
 void pilihIndexKomputer( int _jenisPapan, int *_baris, int *_kolom, char _papan[7][7] );
 void medium( int _jenisPapan, int *_baris, int *_kolom, char _papan[7][7] );
+
 // MARK INDEX > DONE
 void markIndex(int _giliran, int _pilihPertama, char (*_papanKotak)[7][7], int _baris, int _kolom );
 
@@ -148,7 +152,7 @@ void highScore();
 // void gantiGiliran(int *_giliran, int *_pilihPertama);
 
 // //INISIALISASI
-// void scanNama( int _flagInputNama, char (*_namaPlayer)[20]);
+
 
 // // TEKNIS
 // void setcolor(unsigned short color);
