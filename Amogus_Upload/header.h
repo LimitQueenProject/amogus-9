@@ -118,6 +118,8 @@ void tampilkanData();
 // HIGSCORE
 void highScore();
 
+// TEKNIS
+void setcolor(unsigned short color);
 
 // typedef struct
 // {
@@ -154,8 +156,6 @@ void highScore();
 // //INISIALISASI
 
 
-// // TEKNIS
-// void setcolor(unsigned short color);
 
 // // BANNER
 

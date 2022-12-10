@@ -36,7 +36,7 @@ int cekPemenang(int _jenisPapan, char kotak[7][7])
             }
         }
         // CEK PEMENANG DIAGONAL 1
-        if (kotak[0][0] == kotak[1][1] && kotak[1][1] == kotak[2][2]){
+        if ( kotak[1][1] != ' ' && kotak[0][0] == kotak[1][1] && kotak[1][1] == kotak[2][2]){
             if ( kotak[1][1] == 'X' && kotak[2][2] == 'X' ){
                 return 1;
             }
@@ -45,11 +45,11 @@ int cekPemenang(int _jenisPapan, char kotak[7][7])
             }
         }
         // CEK PEMENANG DIAGONAL 2
-        if (kotak[0][2] == kotak[1][1] && kotak[1][1] == kotak[2][0]){
-            if ( kotak[1][1] == 'X' && kotak[2][2] == 'X' ){
+        if (kotak[1][1] != ' ' && kotak[0][2] == kotak[1][1] && kotak[1][1] == kotak[2][0]){
+            if ( kotak[1][1] == 'X' && kotak[2][0] == 'X' ){
                 return 1;
             }
-            else if ( kotak[1][1] == 'O' && kotak[2][2] == 'O' ){
+            else if ( kotak[1][1] == 'O' && kotak[2][0] == 'O' ){
                 return 2;
             }
         }
