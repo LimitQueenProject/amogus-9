@@ -6,9 +6,10 @@
 
 
 // void setelahCekMenang(Game _game, bool *_kondisiGame, bool *_kondisiPemenang, bool *_kondisiPilihGiliranPertama, bool *_kondisiPilihanPapan, bool *_kondisiPilihanPlayer, bool *_kondisiAfterGame)
-void setelahCekMenang(Game _game, int *_halaman, bool *_maingame, bool *_kondisiSetelahMenang, bool *_kondisiGantiGiliran, bool *_kondisiInisialisasi)
+void setelahCekMenang(Game _game, int *_pemenang, int *_halaman, bool *_maingame, bool *_kondisiSetelahMenang, bool *_kondisiGantiGiliran, bool *_kondisiInisialisasi)
 {
     int button;
+    int pemenang = *_pemenang;
     int panx = 89;
     int pany = 7;
     tampilSetelahBermain();
@@ -96,7 +97,8 @@ void setelahCekMenang(Game _game, int *_halaman, bool *_maingame, bool *_kondisi
     // save
     else if (pany == 11)
     {
-        resetAtributPlayGame(&_game.pemenang, &_game.giliran, &_game.papan.kotak);
+        resetAtributPlayGame(&pemenang, &_game.giliran, &_game.papan.kotak);
+        *_pemenang = pemenang;
         saveData(_game);
         *_kondisiSetelahMenang = true;
         koor(panx,pany);printf("   ");

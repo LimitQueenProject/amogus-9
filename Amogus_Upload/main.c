@@ -116,20 +116,20 @@ int main()
 
         while( maingame == true ){
             if ( game.kondisiInisialisasi == true ){
-                inisialisasi(&game);
+                inisialisasi(&game, &pemenang);
             }
             if ( kondisiGantiGiliran == true ){
                 pilihHalaman(pilihpertama, &game.pilihPertama); 
                 kondisiGantiGiliran = false;
             }
             
-            playgame(&game);
+            playgame(&game, &pemenang);
             do{
-                tampilWinorDraw(game.pemain1.namaPlayer, game.pemain2.namaPlayer, game.pemenang, game.giliran, game.papan.jenisPapan);
-                setelahCekMenang(game, &halaman, &maingame, &kondisiSetelahMenang, &kondisiGantiGiliran, &game.kondisiInisialisasi);
+                tampilWinorDraw(game.pemain1.namaPlayer, game.pemain2.namaPlayer, pemenang, game.giliran, game.papan.jenisPapan);
+                setelahCekMenang(game, &pemenang, &halaman, &maingame, &kondisiSetelahMenang, &kondisiGantiGiliran, &game.kondisiInisialisasi);
             }while(kondisiSetelahMenang == true );
 
-            resetAtributPlayGame(&game.pemenang, &game.giliran, &game.papan.kotak);
+            resetAtributPlayGame(&pemenang, &game.giliran, &game.papan.kotak);
         }
 
     }while(kondisiHalaman == true);

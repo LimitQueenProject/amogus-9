@@ -42,7 +42,7 @@ int isiID()
 
 
 // void inisialisasi( char (*_namaPlayer1)[20], char (*_namaPlayer2)[20], int *_id, int *_giliran, int *_score1, int *_score2, char (*_kotak)[7][7], int _jenisPlayer )
-void inisialisasi( Game *game )
+void inisialisasi( Game *game, int *_pemenang )
 {
     
     // int valid = 0;
@@ -98,7 +98,7 @@ void inisialisasi( Game *game )
 // game
     game->id_game = isiID();
     game->giliran = 1;
-    game->pemenang = -1;
+    *_pemenang = -1;
 
 
 // score

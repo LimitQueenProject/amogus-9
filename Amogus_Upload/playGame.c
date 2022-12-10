@@ -6,10 +6,11 @@
 
 #include "header.h"
 
-void playgame(Game *game)
+void playgame(Game *game, int *_pemenang)
 {
     Game tempgame;
     tempgame = *game;
+    int pemenang = *_pemenang;
 
     int baris;
     int kolom;
@@ -32,20 +33,20 @@ void playgame(Game *game)
         markIndex(tempgame.giliran, tempgame.pilihPertama, &tempgame.papan.kotak, baris, kolom);
 
         // // 6. CEK PEMENANG
-        tempgame.pemenang = cekPemenang(tempgame.papan.jenisPapan, tempgame.papan.kotak);
+        pemenang = cekPemenang(tempgame.papan.jenisPapan, tempgame.papan.kotak);
 
         // // 7. TAMBAHKAN SCORE PEMENANG JIKA ADA
-        if ( tempgame.pemenang == 1 ){
+        if ( pemenang == 1 ){
             tempgame.pemain1.score++;
         }
-        else if ( tempgame.pemenang == 2 ){
+        else if ( pemenang == 2 ){
             tempgame.pemain2.score++;
         }
 
         // // 8. GANTI GILIRAN
         tempgame.giliran++;
 
-    } while (tempgame.pemenang == -1 && tempgame.giliran <= tempgame.papan.jenisPapan*tempgame.papan.jenisPapan);
+    } while (pemenang == -1 && tempgame.giliran <= tempgame.papan.jenisPapan*tempgame.papan.jenisPapan);
         
         // 1. BERSIHKAN LAYAR
         system("cls");
@@ -57,5 +58,6 @@ void playgame(Game *game)
         printPapan(tempgame.papan.jenisPapan, tempgame.papan.kotak);
 
     *game = tempgame;
+    *_pemenang = pemenang;
     
 }
