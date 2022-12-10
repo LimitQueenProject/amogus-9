@@ -208,16 +208,17 @@ void tampilWinorDraw(char _namaPlayer1[100], char _namaPlayer2[100], int _pemena
 
 void inputNama( int _jenisPermainanPlayer, char (*_namaPlayer1)[20], char (*_namaPlayer2)[20])
 {
-    // 1. Bersihkan Layar
-    system("cls");
-
     int valid = 0;
     // Nama Player
     if ( _jenisPermainanPlayer == 1 )
     {
         do{
+            // Bersihkan Layar
+            system("cls");
+
             // Tampilkan Banner 2
             banner2();
+
             koor(45,17); printf("Masukan nama anda : ");
             scanNama(&*_namaPlayer1);
             if ( strlen(*_namaPlayer1) <= 20 ){
@@ -233,8 +234,12 @@ void inputNama( int _jenisPermainanPlayer, char (*_namaPlayer1)[20], char (*_nam
     else if ( _jenisPermainanPlayer == 2 )
     {
         do{
+            // Bersihkan Layar
+            system("cls");
+
             // Tampilkan Banner 2
             banner2();
+
             koor(45,17); printf("Masukan nama player 1 : ");
             scanNama(&*_namaPlayer1);
             if ( strlen(*_namaPlayer1) <= 20 ){
@@ -248,6 +253,12 @@ void inputNama( int _jenisPermainanPlayer, char (*_namaPlayer1)[20], char (*_nam
         valid = 0;
         
         do{
+            // Bersihkan Layar
+            system("cls");
+
+            // Tampilkan Banner 2
+            banner2();
+            
             koor(45,17); printf("Masukan nama player 2 : ");
             scanNama(&*_namaPlayer2);
             if ( strlen(*_namaPlayer2) <= 20 ){
