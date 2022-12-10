@@ -51,7 +51,7 @@ void highScore()
     system("cls");
     for (int j = 0; j < i; j++)
     {
-        printf("\n\n%d. %s\t\t:%d\n", j+1, data[j].namaPlayer, data[j].score);
+        printf("\n%d. %s\t\t:%d\n", j+1, data[j].namaPlayer, data[j].score);
     }
     int p = getch();
     
@@ -145,8 +145,8 @@ void loadGame(Game *game, bool *_kondisiLoadgame)
                 printf("\nTekan Tombol Enter Untuk Mencari Data lain...");
                 int b = getch();
                 if( b == 13 ){ 
-                    kondisiCariLagi = false;
-                }
+                    kondisiCariLagi = true;
+                }else kondisiCariLagi = false;
             }
         }
         fclose(file1);
