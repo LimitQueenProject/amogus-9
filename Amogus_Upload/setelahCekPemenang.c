@@ -86,12 +86,12 @@ void setelahCekMenang(Game _game, int *_halaman, bool *_maingame, bool *_kondisi
         *_maingame = true;
         *_kondisiSetelahMenang = false;
     }
-    // swap turn
+    // ganti papan
     else if (pany == 9)
     {
         *_maingame = false;
         *_halaman = 11;
-        *_kondisiSetelahMenang = true;
+        *_kondisiSetelahMenang = false;
     }
     // save
     else if (pany == 11)

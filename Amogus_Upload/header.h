@@ -87,6 +87,7 @@ void playgame(Game *game);
 
 // PILIH INDEX > DONE
 void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPertama, char _papan[7][7], int *_baris, int *_kolom);
+void pilihIndexKomputer( int _jenisPapan, int *_baris, int *_kolom, char _papan[7][7] );
 
 // MARK INDEX > DONE
 void markIndex(int _giliran, int _pilihPertama, char (*_papanKotak)[7][7], int _baris, int _kolom );

@@ -1,19 +1,51 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 #include <conio.h>
+#include <time.h>
 
 #include "header.h"
+
+
+void pilihIndexKomputer( int _jenisPapan, int *_baris, int *_kolom, char _papan[7][7] )
+{
+    int randomBaris;
+    int randomKolom;
+    bool validIndex = false ;
+
+    do{
+        // BUAT BIBIT ANGKA
+        srand(time(0));
+        // RANDOM BARIS DAN KOLOM
+        randomBaris = rand() % _jenisPapan;
+        randomKolom = rand() % _jenisPapan;
+        // CEK KEVALIDAN INDEX 
+        if ( _papan[randomBaris][randomKolom] == ' ' )
+        {
+            validIndex = true;
+            *_baris = randomBaris;
+            *_kolom = randomKolom;
+        }
+    }while(validIndex == false);
+}
+
+
+
 
 void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPertama, char _papan[7][7], int *_baris, int *_kolom)
 {
     if (_flagIndex == 1)
     {
-        if (_pilihPertama == 2)
+        if ( (_pilihPertama == 2 && _giliran % 2 == 1) || (_pilihPertama == 1 && _giliran % 2 == 0) )
         {
-            // pilihIndexKomputer(3, &*_baris, &*_kolom, _papan);
+            int baris = *_baris;
+            int kolom = *_kolom;
+            pilihIndexKomputer(_jenisPapan, &baris, &kolom, _papan);
+            *_baris = baris;
+            *_kolom = kolom;
         }
-        else if (_pilihPertama == 1)
+        else// if (_pilihPertama == 1)
         {
             int button;
             int panx;
@@ -827,9 +859,7 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                     {
                         cekValid = 1;
                     }
-                }
-                while (cekValid == 0)
-                    ;
+                }while (cekValid == 0);
             }
         }
     }
