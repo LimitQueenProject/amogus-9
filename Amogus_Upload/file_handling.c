@@ -52,13 +52,9 @@ void highScore()
     for (int j = 0; j < i; j++)
     {
         printf("\n%d. %s",j+1, data[j].namaPlayer);
-        for(int x=0;x<strlen(data[j].namaPlayer)/5;x++)
+        for(int x=0;x<5-strlen(data[j].namaPlayer)/5;x++)
         {
             printf("\t");
-        }
-        for(int x=0;x<strlen(data[j].namaPlayer)%5;x++)
-        {
-            printf(" ");
         }
         printf(":%d\n", data[j].score);
     }
@@ -184,10 +180,10 @@ void saveData(Game _game)
         }
     }
     fwrite(&_game, sizeof(Game), 1, file2);
-    koor(55,50);
+    koor(55,28);
     printf("\nData Berhasil Di Simpan\n");
     sleep(2);
-    koor(55,50);
+    koor(55,28);
     printf("\n                       \n");
     fclose(file1);
     fclose(file2);

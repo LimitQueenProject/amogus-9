@@ -10,7 +10,7 @@
 void pilihHalaman( int _flagHalaman, int *_pilihanHalaman )
 {
 
-    int panx = 46;
+    int panx = 43;
     int pany = 18;
     int button;
 
