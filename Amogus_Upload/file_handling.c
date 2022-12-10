@@ -66,17 +66,11 @@ void tampilkanData()
     Game _game;
 
     file = fopen("data.dat", "rb");
+    system("cls");
+    koor(0,3);
     while (fread(&_game, sizeof(Game), 1, file))
     {
-        system("cls");
-        koor(50,2);
-        printf("\nData Ditemukan\n");
-        sleep(2);
-        koor(0,1);
-        printf("\n              \n");
-        system("cls");
-        koor(0,4);
-        printf("ID Game : %d\n", _game.id_game);
+        printf("\nID Game : %d\n", _game.id_game);
         printf("%s VS %s\n", _game.pemain1.namaPlayer, _game.pemain2.namaPlayer);
         printf("Score %s\t: %d\n", _game.pemain1.namaPlayer, _game.pemain1.score);
         printf("Score %s\t: %d\n", _game.pemain2.namaPlayer, _game.pemain2.score);
@@ -146,6 +140,7 @@ void loadGame(Game *game, bool *_kondisiLoadgame)
                 kondisiCariLagi = false;
             }
             else if( kondisiDitemukan == false ){
+                system("cls");
                 printf("\nData Tidak Ditemukan");
                 printf("\nTekan Tombol Enter Untuk Mencari Data lain...");
                 int b = getch();
@@ -180,10 +175,10 @@ void saveData(Game _game)
         }
     }
     fwrite(&_game, sizeof(Game), 1, file2);
-    koor(55,27);
+    koor(55,50);
     printf("\nData Berhasil Di Simpan\n");
     sleep(2);
-    koor(55,27);
+    koor(55,50);
     printf("\n                       \n");
     fclose(file1);
     fclose(file2);

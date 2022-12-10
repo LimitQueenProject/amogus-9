@@ -35,7 +35,7 @@ int main()
     bool kondisiLoadgame = false;
     bool kondisiSetelahMenang = false;
     bool kondisiGantiGiliran = true;
-
+    int pemenang;
 
     // Algoritma
     // 1. Pengaturan ukuran console dengan lebar 1000 dan tinggi 600 {source: https://www.codeincodeblock.com/2011/03/move-console-windows-using-codeblock.html}

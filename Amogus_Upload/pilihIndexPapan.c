@@ -65,7 +65,7 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                         do
                         {
                             koor(panx, pany);
-                            printf("%d", _pilihPertama);
+                            printf("1");
                             koor(0, 0);
                             button = getch();
                             if (button == up || button == w || button == W)
@@ -199,7 +199,7 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                     do
                     {
                         koor(panx, pany);
-                        printf("%d", _pilihPertama);
+                        printf("1");
                         koor(0, 0);
                         button = getch();
                         if (button == up || button == w || button == W)
@@ -455,7 +455,7 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                     do
                     {
                         koor(panx, pany);
-                        printf("%d", _pilihPertama);
+                        printf("1");
                         koor(0, 0);
                         button = getch();
                         if (button == up || button == w || button == W)
@@ -883,7 +883,11 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                 do
                 {
                     koor(panx, pany);
-                    printf("%d", _pilihPertama);
+                    if(_pilihPertama==1 && _giliran%2==1 || _pilihPertama==2 && _giliran%2==0)
+                    {
+                    printf("1");
+                    }
+                    else printf("2");
                     koor(0, 0);
                     button = getch();
                     if (button == up || button == w || button == W)
@@ -1015,7 +1019,11 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                 do
                 {
                     koor(panx, pany);
-                    printf("%d", _pilihPertama);
+                    if(_pilihPertama==1 && _giliran%2==1 || _pilihPertama==2 && _giliran%2==0)
+                    {
+                    printf("1");
+                    }
+                    else printf("2");
                     koor(0, 0);
                     button = getch();
                     if (button == up || button == w || button == W)
@@ -1271,7 +1279,11 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                 do
                 {
                     koor(panx, pany);
-                    printf("%d", _pilihPertama);
+                    if(_pilihPertama==1 && _giliran%2==1 || _pilihPertama==2 && _giliran%2==0)
+                    {
+                    printf("1");
+                    }
+                    else printf("2");
                     koor(0, 0);
                     button = getch();
                     if (button == up || button == w || button == W)
