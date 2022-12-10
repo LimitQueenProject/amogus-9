@@ -203,29 +203,3 @@ void tampilWinorDraw(char _namaPlayer1[100], char _namaPlayer2[100], int _pemena
         koor(15,15); printf("%s VS %s", _namaPlayer1, _namaPlayer2);
         }
 }
-
-
-// void inputNama( int _flagInputNama, char (*_namaPlayer1)[100], char (*_namaPlayer2)[100])
-// {
-//     // 1. Bersihkan Layar
-//     system("cls");
-
-//     // 2. Tampilkan Banner 2
-//     banner2();
-
-//     // 3. Tampilkan input nama player 1
-//     koor(47,17); printf("Input name for Player 1 = ");
-//     scanNama(_flagInputNama, &*_namaPlayer1);
-
-//     // 4. Tampilkan input nama player 2
-//     if(_flagInputNama == 2)
-//     {
-//         koor(47,19); printf("Input name for Player 2 = ");
-//         scanNama(_flagInputNama, &*_namaPlayer2);
-//     }
-    
-//     else 
-//     {
-//         strcpy(*_namaPlayer2, "Computer");
-//     }
-// }

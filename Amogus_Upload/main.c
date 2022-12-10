@@ -66,10 +66,10 @@ int main()
                     highScore();
                 }
                 else if ( pilihan == howtoplay ){
-                    halaman = howtoplay;
+                    tampilanHowToPlay();
                 }
                 else if ( pilihan == aboutus ){
-                    halaman = aboutus;
+                    tampilanAboutUs();
                 }
                 else if ( pilihan == keluar ){
                     kondisiHalaman = false;
