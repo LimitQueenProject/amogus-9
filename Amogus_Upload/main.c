@@ -44,7 +44,6 @@ int main()
 
     // 2. Menampilkan Loading Game Agar Keren
     // loading();
-    system("color 50");
     do{
         
         switch (halaman){

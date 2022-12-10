@@ -157,9 +157,9 @@ void tampilanPilihPertama ()
     // 2. Tampilkan Banner 2
     banner2();
 
-    // 3. PRINT Tampilan Siapa yang Bermain Pertama
+    // 3. PRINT Tampilan Siapa yang Bermain Pertama    m
     koor(42,12); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",218,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,191);
-    koor(42,13); printf("%c SIAPA YANG BERMAIN PERTAMA %c",179,179);
+    koor(42,13); printf("%c       Who first?        %c",179,179);
     koor(42,14); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,217);
     
     koor(47,16); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",218,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,191);
