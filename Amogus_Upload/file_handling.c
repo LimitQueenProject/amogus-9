@@ -51,7 +51,16 @@ void highScore()
     system("cls");
     for (int j = 0; j < i; j++)
     {
-        printf("\n%d. %s\t\t:%d\n", j+1, data[j].namaPlayer, data[j].score);
+        printf("\n%d. %s",j+1, data[j].namaPlayer);
+        for(int x=0;x<strlen(data[j].namaPlayer)/5;x++)
+        {
+            printf("\t");
+        }
+        for(int x=0;x<strlen(data[j].namaPlayer)%5;x++)
+        {
+            printf(" ");
+        }
+        printf(":%d\n", data[j].score);
     }
     int p = getch();
     
