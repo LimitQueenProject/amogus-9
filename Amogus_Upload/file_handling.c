@@ -49,15 +49,22 @@ void highScore()
     }
 
     system("cls");
+    banner2();
+    printf("\n\n\tTop 10 Highest Point\n\n");
+    if(i>10)
+    {
+        i=10;
+    }
     for (int j = 0; j < i; j++)
     {
-        printf("\n%d. %s",j+1, data[j].namaPlayer);
+        printf("%d. %s",j+1, data[j].namaPlayer);
         for(int x=0;x<5-strlen(data[j].namaPlayer)/5;x++)
         {
             printf("\t");
         }
-        printf(":%d\n", data[j].score);
+        printf("| %d\n", data[j].score);
     }
+    printf("\n\npress any key to continue");
     int p = getch();
     
     //
@@ -72,18 +79,19 @@ void tampilkanData()
 
     file = fopen("data.dat", "rb");
     system("cls");
-    koor(0,3);
+    banner2();
+    koor(3,12);
     while (fread(&_game, sizeof(Game), 1, file))
     {
-        printf("\nID Game : %d\n", _game.id_game);
-        printf("%s VS %s\n", _game.pemain1.namaPlayer, _game.pemain2.namaPlayer);
-        printf("Score %s\t: %d\n", _game.pemain1.namaPlayer, _game.pemain1.score);
-        printf("Score %s\t: %d\n", _game.pemain2.namaPlayer, _game.pemain2.score);
-        printf("Jenis Papan : %dx%d\n", _game.papan.jenisPapan, _game.papan.jenisPapan);
+        printf("\n\tID Game : %d\n", _game.id_game);
+        printf("\t%s VS %s\n", _game.pemain1.namaPlayer, _game.pemain2.namaPlayer);
+        printf("\tScore %s\t: %d\n", _game.pemain1.namaPlayer, _game.pemain1.score);
+        printf("\tScore %s\t: %d\n", _game.pemain2.namaPlayer, _game.pemain2.score);
+        printf("\tBoard Type : %dx%d\n", _game.papan.jenisPapan, _game.papan.jenisPapan);
         if (_game.pilihPertama == 1)
-            printf("Giliran Pertama : %s\n", _game.pemain1.namaPlayer);
+            printf("\t%s is go first\n", _game.pemain1.namaPlayer);
         else
-            printf("Giliran Pertama : %s\n", _game.pemain2.namaPlayer);
+            printf("\t%s is go first\n", _game.pemain2.namaPlayer);
     }
 
     fclose(file);
@@ -105,33 +113,36 @@ void loadGame(Game *game, bool *_kondisiLoadgame)
         if ( file1 == NULL )
         {
             system("cls");
-            printf("\nData Masih Kosong");
+            printf("\n\tData is empty");
             getchar();
         }
         else{
             tampilkanData();
 
-            koor(0,1);
-            printf("\nMasukan id yang akan di load : ");
+            banner2();
+            koor(3,11);
+            printf("\tInput ID game : ");
             scanf("%d", &_id);
+            koor(2,13);
             while(fread(&tempGame, sizeof(Game),1,file1))
             {
                 if ( tempGame.id_game == _id )
                 {
                     system("cls");
-                    printf("\nData Bisa Di Load\n");
-                    printf("ID Game : %d\n", tempGame.id_game);
-                    printf("%s VS %s\n", tempGame.pemain1.namaPlayer, tempGame.pemain2.namaPlayer);
-                    printf("Score %s\t: %d\n", tempGame.pemain1.namaPlayer, tempGame.pemain1.score);
-                    printf("Score %s\t: %d\n", tempGame.pemain2.namaPlayer, tempGame.pemain2.score);
-                    printf("Jenis Papan : %dx%d\n", tempGame.papan.jenisPapan, tempGame.papan.jenisPapan);
+                    banner2();
+                    printf("\n\n\n\tSucces to found the data\n");
+                    printf("\tID Game : %d\n", tempGame.id_game);
+                    printf("\t%s VS %s\n", tempGame.pemain1.namaPlayer, tempGame.pemain2.namaPlayer);
+                    printf("\tScore %s\t: %d\n", tempGame.pemain1.namaPlayer, tempGame.pemain1.score);
+                    printf("\tScore %s\t: %d\n", tempGame.pemain2.namaPlayer, tempGame.pemain2.score);
+                    printf("\tBoard Type : %dx%d\n", tempGame.papan.jenisPapan, tempGame.papan.jenisPapan);
                     if (tempGame.pilihPertama == 1){
-                        printf("Giliran Pertama : %s\n", tempGame.pemain1.namaPlayer);
+                        printf("\t%s is go first\n", tempGame.pemain1.namaPlayer);
                     }
                     else{
-                        printf("Giliran Pertama : %s\n", tempGame.pemain2.namaPlayer);
+                        printf("\t%s is go first\n", tempGame.pemain2.namaPlayer);
                     }
-                    printf("\nLoad Permainan ? Tekan Enter Jika Ya");
+                    printf("\n\n\tLoad game ?\n\tPress Enter to load");
                     int b = getch();
                     if (b==13)
                     {
@@ -146,8 +157,9 @@ void loadGame(Game *game, bool *_kondisiLoadgame)
             }
             else if( kondisiDitemukan == false ){
                 system("cls");
-                printf("\nData Tidak Ditemukan");
-                printf("\nTekan Tombol Enter Untuk Mencari Data lain...");
+                banner2();
+                printf("\n\n\tData is empty");
+                printf("\n\tPress Enter to search another id...");
                 int b = getch();
                 if( b == 13 ){ 
                     kondisiCariLagi = true;
@@ -181,10 +193,10 @@ void saveData(Game _game)
     }
     fwrite(&_game, sizeof(Game), 1, file2);
     koor(55,28);
-    printf("\nData Berhasil Di Simpan\n");
+    printf("\n\tYour data has been saved\n");
     sleep(2);
     koor(55,28);
-    printf("\n                       \n");
+    printf("\n\t                         \n");
     fclose(file1);
     fclose(file2);
     remove("data.dat");

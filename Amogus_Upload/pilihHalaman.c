@@ -250,7 +250,7 @@ void pilihHalaman( int _flagHalaman, int *_pilihanHalaman )
     // PILIH PERTAMA
     else if (_flagHalaman == 111)
     {
-        panx=48;
+        panx=45;
         pany=17;
         tampilanPilihPertama();
         do

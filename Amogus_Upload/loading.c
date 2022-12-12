@@ -8,17 +8,19 @@ void loading()
 	/*
     1. Membutuhkan modul koor
     */
-   	system("color F");
     int button;
 	int z;
 	banner1();
 	sleep(1);
 
-	koor(57, 23);
+	koor(56, 23);
 	printf("Loading ...");
-	sleep(0.5);
-	koor(40, 25);
-	for (z = 0; z < 15; z++)
+	sleep(1.5);
+   	setcolor(11);
+	koor(41, 25);
+	printf("%c", 178);
+	sleep(1);
+	for (z = 0; z < 14; z++)
 	{
 		printf("%c", 178);
 	}
@@ -39,8 +41,9 @@ void loading()
 	}
 	sleep(1);
 	system("cls");
+	setcolor(7);
 	banner1();
-	koor(47, 27);
+	koor(47, 25);
 	printf("press any key to continue...");
 	button = getch();
 }

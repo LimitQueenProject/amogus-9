@@ -72,9 +72,9 @@ void tampilanBoard()
     banner2();
 
     // 3. PRINT PILIHAN PAPAN
-    koor(52,13); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c",218,196,196,196,196,196,196,196,196,196,196,196,191);
-    koor(52,14); printf("%c           %c",179,179);
-    koor(52,15); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,217);
+    koor(51,13); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c",218,196,196,196,196,196,196,196,196,196,196,196,191);
+    koor(51,14); printf("%c           %c",179,179);
+    koor(51,15); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,217);
     koor(47,17); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",218,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,191);
     koor(47,18); printf("%c                   %c",179,179);
     koor(47,19); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",195,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,180);
@@ -101,20 +101,20 @@ void tampilanHowToPlay()
     banner2();
 
     // 3. PRINT Tampilan Cara Bermain
-    koor(47,12); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 218, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 191);            
-    koor(47,13); printf("%c How to Play  %c", 179, 179);
-    koor(47,14); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 192, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 217);
+    koor(49,12); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 218, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 191);            
+    koor(49,13); printf("%c  How to Play  %c", 179, 179);
+    koor(49,14); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 192, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 217);
 
-    koor(22,16); printf("1. The game starts using board sizes, namely 3x3, 5x5, and 7x7");
-    koor(22,17); printf("2. There are 2 players who can play, which can be against fellow players");
-    koor(25,18); printf("or against the computer");
-    koor(22,19); printf("3. Player 1 uses the X mark and player 2 uses the O mark");
-    koor(22,20); printf("4. Choose a box to be filled in by the player, provided that");
-    koor(25,21); printf("the player cannot choose a box that has already been selected");
-    koor(22,22); printf("5. The first player to succeed in making a line with his mark");
-    koor(25,23); printf("be it horizontal, vertical or diagonal then declared the winner");
-    koor(22,24); printf("6. If none of the players succeed in making a line, then the ");
-    koor(25,25); printf("game is considered a draw");
+    koor(27,16); printf("1. The game starts using board sizes, namely 3x3, 5x5, and 7x7");
+    koor(27,18); printf("2. There are 2 players who can play, which can be against fellow players");
+    koor(27,19); printf("   or against the computer");
+    koor(27,21); printf("3. Player 1 uses the X mark and player 2 uses the O mark");
+    koor(27,23); printf("4. Choose a box to be filled in by the player, provided that");
+    koor(27,24); printf("   the player cannot choose a box that has already been selected");
+    koor(27,26); printf("5. The first player to succeed in making a line with his mark");
+    koor(27,27); printf("   be it horizontal, vertical or diagonal then declared the winner");
+    koor(27,29); printf("6. If none of the players succeed in making a line, then the ");
+    koor(27,30); printf("   game is considered a draw");
     
     koor(2,33);  printf("press any key to back...");
 	button = getch();
@@ -130,20 +130,20 @@ void tampilanAboutUs()
     banner2();
 
     // 3. PRINT Tampilan Tentang Kami
-    koor(47,12); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 218, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 191);
-    koor(47,13); printf("%c   About Us   %c", 179, 179);
-    koor(47,14); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 192, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 217);
+    koor(50,12); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 218, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 191);
+    koor(50,13); printf("%c   About Us   %c", 179, 179);
+    koor(50,14); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 192, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 217);
 
-    koor(41,16); printf("1. Farhan Muhammad yasin");
-    koor(44,17); printf("NIM = 221524008");
-    koor(44,18); printf("Instagram = @f._.myers");
-    koor(41,20); printf("2. Muhammad Azharuddin Hamid");
-    koor(44,21); printf("NIM = 221524018");
-    koor(44,22); printf("Instagram = @muhammadazhar9_");
-    koor(41,24); printf("3. Roy Aziz Barera");
-    koor(44,25); printf("NIM = 221524030");
-    koor(44,26); printf("Instagram = @royazizbarera_");
-    koor(36,28); printf("Institusi = Polikteknik Negeri Bandung");
+    koor(44,16); printf("1. Farhan Muhammad yasin");
+    koor(47,17); printf("NIM = 221524008");
+    koor(47,18); printf("Instagram = @f._.myers");
+    koor(44,20); printf("2. Muhammad Azharuddin Hamid");
+    koor(47,21); printf("NIM = 221524018");
+    koor(47,22); printf("Instagram = @muhammadazhar9_");
+    koor(44,24); printf("3. Roy Aziz Barera");
+    koor(47,25); printf("NIM = 221524030");
+    koor(47,26); printf("Instagram = @royazizbarera_");
+    koor(39,29); printf("Institusi = Polikteknik Negeri Bandung");
     
     koor(2,33);  printf("press any key to back...");
 	button = getch();
@@ -157,18 +157,18 @@ void tampilanPilihPertama ()
     // 2. Tampilkan Banner 2
     banner2();
 
-    // 3. PRINT Tampilan Siapa yang Bermain Pertama    m
-    koor(42,12); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",218,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,191);
-    koor(42,13); printf("%c       Who first?        %c",179,179);
-    koor(42,14); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,217);
+    // 3. PRINT Tampilan Siapa yang Bermain Pertama    
+    koor(48,12); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",218,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,191);
+    koor(48,13); printf("%c Who goes first ? %c",179,179);
+    koor(48,14); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,217);
     
-    koor(47,16); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",218,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,191);
-    koor(47,17); printf("%c                   %c",179,179);
-    koor(47,18); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",195,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,180);
-    koor(47,19); printf("%c                   %c",179,179);
-    koor(47,20); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,217);
-    koor(53,17); printf("Player 1");
-    koor(53,19); printf("Player 2");
+    koor(50,16); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",218,196,196,196,196,196,196,196,196,196,196,196,196,196,196,191);
+    koor(50,17); printf("%c              %c",179,179);
+    koor(50,18); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",195,196,196,196,196,196,196,196,196,196,196,196,196,196,196,180);
+    koor(50,19); printf("%c              %c",179,179);
+    koor(50,20); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,196,196,196,217);
+    koor(54,17); printf("Player 1");
+    koor(54,19); printf("Player 2");
 }
 
 void tampilSetelahBermain()
