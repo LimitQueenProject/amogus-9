@@ -44,11 +44,8 @@ int main()
 
     // 2. Menampilkan Loading Game Agar Keren
     loading();
-<<<<<<< HEAD
-=======
 
     // loading();
->>>>>>> 4fa19b808ce851c2e3681d9edc71261b00245717
     do{
         
         switch (halaman){
