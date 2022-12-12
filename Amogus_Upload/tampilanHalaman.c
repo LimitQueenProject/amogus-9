@@ -272,7 +272,21 @@ void inputNama( int _jenisPermainanPlayer, char (*_namaPlayer1)[20], char (*_nam
     }
 }
 
-void scanNama( char (*_namaPlayer)[20])
+void tampilanKotakHighscore(int i)
 {
- scanf(" %[^\n]", (*_namaPlayer));
+    koor(45,12); printf("%c%C%C%C%C%C%C%C%C%c%c%C%C%C%C%C%c%c%c%c%c%c%c%c", 218, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 191);
+    koor(45,13); printf("%c Top 10 Highest Point %c", 179, 179);
+    koor(45,14); printf("%c%C%C%C%C%C%C%C%c%c%C%C%C%C%C%C%c%c%c%c%c%c%c%c", 192, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 217);
+
+    int pany = 16;
+        koor(40,pany);   printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 218, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 191);
+    for(int j = 0; j < i; j++)
+    {
+        koor(40,pany+1); printf("%c", 179);
+        koor(60,pany+1); printf("%c   %c", 179, 179);
+        pany+=1;
+        koor(40,pany+2); printf("\n%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 218, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 196, 191);
+    }
 }
+
+

@@ -48,21 +48,23 @@ void highScore()
         }
     }
 
+    // Membersihkan layar
     system("cls");
+
+    // Menampilkan Banner 2
     banner2();
-    printf("\n\n\tTop 10 Highest Point\n\n");
+    
     if(i>10)
     {
         i=10;
     }
+    tampilanKotakHighscore(i);
+    int pany = 17;
     for (int j = 0; j < i; j++)
     {
-        printf("%d. %s",j+1, data[j].namaPlayer);
-        for(int x=0;x<5-strlen(data[j].namaPlayer)/5;x++)
-        {
-            printf("\t");
-        }
-        printf("| %d\n", data[j].score);
+        koor(41,pany); printf("%d. %s",j+1, data[j].namaPlayer);
+        koor(61,pany); printf("%d", data[j].score);
+        pany++;
     }
     printf("\n\npress any key to continue");
     int p = getch();    

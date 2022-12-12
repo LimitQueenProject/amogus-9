@@ -117,6 +117,12 @@ void inisialisasi( Game *game, int *_pemenang )
 // Inisialisasi
     game->kondisiInisialisasi = false;
 }
+
+
+void scanNama( char (*_namaPlayer)[20])
+{
+ scanf(" %[^\n]", (*_namaPlayer));
+}
 // void inisialisasi( char (*_namaPlayer1)[20], char (*_namaPlayer2)[20], int *_id, int *_giliran, int *_score1, int *_score2, char (*_kotak)[7][7], int _jenisPlayer )
 // {
     

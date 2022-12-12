@@ -51,11 +51,13 @@ void banner2();
 void tampilanMenu();
 void tampilanPlayer();
 void tampilanBoard();
+void tampilanKotakHighscore(int i);
 void tampilanHowToPlay();
 void tampilanAboutUs();
 void tampilSetelahBermain();
 void tampilanPilihPertama();
 void tampilWinorDraw(char _namaPlayer1[20], char _namaPlayer2[20], int _pemenang, int _giliran, int _jenisPapan);
+
 
 // LOADING > DONE
 void loading();

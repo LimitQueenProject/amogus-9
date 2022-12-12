@@ -47,7 +47,7 @@ void medium( int _jenisPapan, int *_baris, int *_kolom, char _papan[7][7] )
     int i = 0;
     for( i = 1; i <= 8; i++ )
     {
-        if( index[i].baris >= 0 && index[i].kolom >= 0 && _papan[index[i].baris][index[i].kolom] == ' '){
+        if( index[i].baris >= 0 && index[i].kolom >= 0 && index[i].baris < _jenisPapan && index[i].kolom < _jenisPapan && _papan[index[i].baris][index[i].kolom] == ' '){
             *_baris = index[i].baris;
             *_kolom = index[i].kolom;
             

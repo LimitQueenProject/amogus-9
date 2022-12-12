@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <conio.h>
 #include <time.h>
+#include <unistd.h>
 
 #include "header.h"
 
@@ -35,22 +36,24 @@ void pilihIndexKomputer( int _jenisPapan, int *_baris, int *_kolom, char _papan[
 
 void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPertama, char _papan[7][7], int *_baris, int *_kolom)
 {
+    int count=0;
+    int button=0;
+    int panx;
+    int pany;
     if (_flagIndex == 1)
     {
         if ( (_pilihPertama == 2 && _giliran % 2 == 1) || (_pilihPertama == 1 && _giliran % 2 == 0) )
         {
             int baris = *_baris;
             int kolom = *_kolom;
-            pilihIndexKomputer(_jenisPapan, &baris, &kolom, _papan);
-            // medium(_jenisPapan, &baris, &kolom, _papan);
+            // pilihIndexKomputer(_jenisPapan, &baris, &kolom, _papan);
+            medium(_jenisPapan, &baris, &kolom, _papan);
             *_baris = baris;
             *_kolom = kolom;
+
         }
         else// if (_pilihPertama == 1)
         {
-            int button;
-            int panx;
-            int pany;
             int cekValid = 0;
             if (_jenisPapan == 3)
             {
@@ -60,14 +63,18 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                 pany = 7;
                 do
                 {
-                    if(kbhit())
+                    do
                     {
-                        do
+                            if(count%10000==0)
+                            {
+                                koor(61,2);printf("  ");
+                                koor(61,2);printf("%d",10 - count/10000);
+                            }
+                            button=0;
+                        if(kbhit())
                         {
-                            koor(panx, pany);
-                            printf("1");
-                            koor(0, 0);
                             button = getch();
+                        }
                             if (button == up || button == w || button == W)
                             {
                                 switch (pany)
@@ -76,16 +83,25 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                                     pany = 15;
                                     koor(panx, 7);
                                     printf(" ");
+                                    koor(panx, pany);
+                                    printf("1");
+                                    koor(0, 0);
                                     break;
                                 case 11:
                                     pany = 7;
                                     koor(panx, 11);
                                     printf(" ");
+                                    koor(panx, pany);
+                                    printf("1");
+                                    koor(0, 0);
                                     break;
                                 case 15:
                                     pany = 11;
                                     koor(panx, 15);
                                     printf(" ");
+                                    koor(panx, pany);
+                                    printf("1");
+                                    koor(0, 0);
                                     break;
                                 }
                             }
@@ -97,16 +113,25 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                                     pany = 11;
                                     koor(panx, 7);
                                     printf(" ");
+                                    koor(panx, pany);
+                                    printf("1");
+                                    koor(0, 0);
                                     break;
                                 case 11:
                                     pany = 15;
                                     koor(panx, 11);
                                     printf(" ");
+                                    koor(panx, pany);
+                                    printf("1");
+                                    koor(0, 0);
                                     break;
                                 case 15:
                                     pany = 7;
                                     koor(panx, 15);
                                     printf(" ");
+                                    koor(panx, pany);
+                                    printf("1");
+                                    koor(0, 0);
                                     break;
                                 }
                             }
@@ -118,16 +143,25 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                                     panx = 66;
                                     koor(54, pany);
                                     printf(" ");
+                                    koor(panx, pany);
+                                    printf("1");
+                                    koor(0, 0);
                                     break;
                                 case 60:
                                     panx = 54;
                                     koor(60, pany);
                                     printf(" ");
+                                    koor(panx, pany);
+                                    printf("1");
+                                    koor(0, 0);
                                     break;
                                 case 66:
                                     panx = 60;
                                     koor(66, pany);
                                     printf(" ");
+                                    koor(panx, pany);
+                                    printf("1");
+                                    koor(0, 0);
                                     break;
                                 }
                             }
@@ -139,20 +173,31 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                                     panx = 60;
                                     koor(54, pany);
                                     printf(" ");
+                                    koor(panx, pany);
+                                    printf("1");
+                                    koor(0, 0);
                                     break;
                                 case 60:
                                     panx = 66;
                                     koor(60, pany);
                                     printf(" ");
+                                    koor(panx, pany);
+                                    printf("1");
+                                    koor(0, 0);
                                     break;
                                 case 66:
                                     panx = 54;
                                     koor(66, pany);
                                     printf(" ");
+                                    koor(panx, pany);
+                                    printf("1");
+                                    koor(0, 0);
                                     break;
                                 }
                             }
-                        } while (button != 13);
+                        count++;
+		                sleep(0.001);
+                        } while (button != 13 && count<=100000);
 
                         if (panx == 54 && pany == 7)
                         {
@@ -204,7 +249,6 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                         {
                             cekValid = 1;
                         }
-                    }
                 } while (cekValid == 0);
             }
 
