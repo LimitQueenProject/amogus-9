@@ -33,7 +33,7 @@ typedef struct {
 	int giliran;
     int pilihPertama;
 	int jenisPermainanPlayer;
-	int pemenang;
+	// int pemenang;
 	bool kondisiInisialisasi;
     Player pemain1; 	
     Player pemain2; 	
@@ -77,7 +77,7 @@ void pilihHalaman( int _flagHalaman, int *_pilihanHalaman );
 
 // INISIALISASI > DONE
 // void inisialisasi( char (*_namaPlayer1)[20], char (*_namaPlayer2)[20], int *_id, int *_giliran, int *_score1, int *_score2, char (*_kotak)[7][7], int _jenisPlayer );
-void inisialisasi( Game *game );
+void inisialisasi( Game *game, int *_pemenang );
 int isiID();
 
 // Input Nama
@@ -86,7 +86,7 @@ void scanNama( char (*_namaPlayer)[20]);
 
 // KATEGORI PLAY GAME
 // PLAY GAME > DONE
-void playgame(Game *game);
+void playgame(Game *game, int *_pemenang);
 
 // PILIH INDEX > DONE
 void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPertama, char _papan[7][7], int *_baris, int *_kolom);
@@ -103,7 +103,7 @@ int cekPemenang(int _jenisPapan, char kotak[7][7]);
 void resetAtributPlayGame(int *_pemenang, int *_giliran, char (*_papan)[7][7]);
 
 // SETELAH CEK PEMENANG
-void setelahCekMenang(Game _game, int *_halaman, bool *_maingame, bool *_kondisiSetelahMenang, bool *_kondisiGantiGiliran, bool *_kondisiInisialisasi);
+void setelahCekMenang(Game _game, int *_pemenang, int *_halaman, bool *_maingame, bool *_kondisiSetelahMenang, bool *_kondisiGantiGiliran, bool *_kondisiInisialisasi);
 
 // KATEGORI FILE HANDLING
 // FILE HANDLING > DONE
