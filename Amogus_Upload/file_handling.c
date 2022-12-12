@@ -65,10 +65,7 @@ void highScore()
         printf("| %d\n", data[j].score);
     }
     printf("\n\npress any key to continue");
-    int p = getch();
-    
-    //
-    
+    int p = getch();    
 }
 
 void tampilkanData()
