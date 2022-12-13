@@ -26,6 +26,7 @@ void markIndex(int _giliran, int _pilihPertama, char (*_papanKotak)[7][7], int _
         else if (_giliran % 2 == 0)
         {
             (*_papanKotak)[_baris][_kolom] = 'X';
+
         }
     }
 }
