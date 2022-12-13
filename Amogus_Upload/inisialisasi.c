@@ -44,53 +44,6 @@ int isiID()
 // void inisialisasi( char (*_namaPlayer1)[20], char (*_namaPlayer2)[20], int *_id, int *_giliran, int *_score1, int *_score2, char (*_kotak)[7][7], int _jenisPlayer )
 void inisialisasi( Game *game, int *_pemenang )
 {
-    
-    // int valid = 0;
-    // // Nama Player
-    // if ( game->jenisPermainanPlayer == 1 )
-    // {
-    //     do{
-    //         system("cls");
-    //         printf("\nMasukan nama anda : ");
-    //         scanf(" %[^\n]", game->pemain1.namaPlayer);
-    //         if ( strlen(game->pemain1.namaPlayer) <= 20 ){
-    //             valid = 1;
-    //         }
-    //         else{
-    //             printf("Nama anda terlalu panjang silahkan input ulang\n");
-    //             sleep(2);
-    //         }
-    //     }while(valid == 0);
-    //     strcpy(game->pemain2.namaPlayer, "Computer");
-    // }
-    // else if ( game->jenisPermainanPlayer == 2 )
-    // {
-    //     do{
-    //         system("cls");
-    //         printf("\nMasukan nama player 1 : ");
-    //         scanf(" %[^\n]", game->pemain1.namaPlayer);
-    //         if ( strlen(game->pemain1.namaPlayer) <= 20 ){
-    //             valid = 1;
-    //         }
-    //         else{
-    //             printf("Nama anda terlalu panjang silahkan input ulang\n");
-    //             sleep(2);
-    //         }
-    //     }while(valid == 0);
-    //     valid = 0;
-    //     do{
-    //         system("cls");
-    //         printf("\nMasukan nama player 2 : ");
-    //         scanf(" %[^\n]", game->pemain2.namaPlayer);
-    //         if ( strlen(game->pemain2.namaPlayer) <= 20 ){
-    //             valid = 1;
-    //         }
-    //         else{
-    //             printf("Nama anda terlalu panjang silahkan input ulang\n");
-    //             sleep(2);
-    //         }
-    //     }while(valid == 0);
-    // }
 
 // NAMA
     inputNama(game->jenisPermainanPlayer, &game->pemain1.namaPlayer, &game->pemain2.namaPlayer );
