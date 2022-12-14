@@ -47,24 +47,18 @@ void highScore()
             }
         }
     }
+    
+    
+    if(i>5)
+    {
+        i=5;
+    }
 
     system("cls");
-    banner2();
-    printf("\n\n\tTop 10 Highest Point\n\n");
-    if(i>10)
-    {
-        i=10;
-    }
     for (int j = 0; j < i; j++)
     {
-        printf("%d. %s",j+1, data[j].namaPlayer);
-        for(int x=0;x<5-strlen(data[j].namaPlayer)/5;x++)
-        {
-            printf("\t");
-        }
-        printf("| %d\n", data[j].score);
+        tampilHighScore(data[j].namaPlayer, data[j].score, j, i);
     }
-    printf("\n\npress any key to continue");
     int p = getch();    
 }
 
