@@ -272,7 +272,4 @@ void inputNama( int _jenisPermainanPlayer, char (*_namaPlayer1)[20], char (*_nam
     }
 }
 
-void scanNama( char (*_namaPlayer)[20])
-{
- scanf(" %[^\n]", (*_namaPlayer));
-}
+
