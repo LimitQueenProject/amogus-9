@@ -76,7 +76,7 @@ void dashboard(char _namaPlayer1[100], char _namaPlayer2[100], int _pertama, int
 		for(i=1;i<=length2+2;i++)
 		{
 			printf("%c",205);
-		}printf("%c",187);
+		}	printf("%c",187);
 		koor(68,3);
 		for(i=1;i<=length2+2;i++)
 		{
