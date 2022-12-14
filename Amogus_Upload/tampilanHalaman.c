@@ -177,7 +177,7 @@ void tampilSetelahBermain()
 	koor(94,9);  printf("Choose Board");
 	koor(94,11); printf("Save");
 	koor(94,13); printf("Back to Menu");
-	koor(94,15); printf("Ganti Giliran");
+	koor(94,15); printf("Cho");
 }
 
 
