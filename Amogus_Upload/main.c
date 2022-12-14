@@ -125,8 +125,8 @@ int main()
             }
             
             playgame(&game, &pemenang);
+            tampilWinorDraw(game.pemain1.namaPlayer, game.pemain2.namaPlayer, pemenang, game.giliran, game.papan.jenisPapan);
             do{
-                tampilWinorDraw(game.pemain1.namaPlayer, game.pemain2.namaPlayer, pemenang, game.giliran, game.papan.jenisPapan);
                 setelahCekMenang(game, &pemenang, &halaman, &maingame, &kondisiSetelahMenang, &kondisiGantiGiliran, &game.kondisiInisialisasi);
             }while(kondisiSetelahMenang == true );
 

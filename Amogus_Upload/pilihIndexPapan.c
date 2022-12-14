@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <conio.h>
 #include <time.h>
+#include <unistd.h>
 
 #include "header.h"
 
@@ -33,8 +34,14 @@ void pilihIndexKomputer( int _jenisPapan, int *_baris, int *_kolom, char _papan[
 
 
 
-void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPertama, char _papan[7][7], int *_baris, int *_kolom)
+void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPertama, char _papan[7][7], int *_baris, int *_kolom, bool *_valid)
 {
+    int count=0;
+    const float detik = 10;
+    time_t start, end;
+    float waktu;
+    start = time(NULL);
+    *_valid=true;
     if (_flagIndex == 1)
     {
         if ( (_pilihPertama == 2 && _giliran % 2 == 1) || (_pilihPertama == 1 && _giliran % 2 == 0) )
@@ -48,7 +55,7 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
         }
         else// if (_pilihPertama == 1)
         {
-            int button;
+            int button=0;
             int panx;
             int pany;
             int cekValid = 0;
@@ -60,14 +67,29 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                 pany = 7;
                 do
                 {
-                    if(kbhit())
-                    {
                         do
                         {
-                            koor(panx, pany);
-                            printf("1");
-                            koor(0, 0);
+                            end = time(NULL);
+                            waktu = end - start;
+                            if(count%6000==0)
+                            {
+                                koor(61,2);printf("  ");
+                                koor(61,2);printf("%.f",detik-waktu);
+                            }
+                            if(button!=0)
+                            {
+                                koor(panx, pany);
+                                printf("1");
+                                button=0;
+                            }
+                            if(button==0)
+                            {
+                                koor(0,0);
+                            }
+                            if(kbhit())
+                            {
                             button = getch();
+                            }
                             if (button == up || button == w || button == W)
                             {
                                 switch (pany)
@@ -151,61 +173,66 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                                     printf(" ");
                                     break;
                                 }
+                            }  
+                            count++;  
+                            sleep(0.1);
+                            if(waktu==10)
+                            {
+                                *_valid=false;
                             }
-                        } while (button != 13);
+                        } while (button != 13 && *_valid==true);
 
-                        if (panx == 54 && pany == 7)
-                        {
-                            *_baris = 0;
-                            *_kolom = 0;
-                        }
-                        else if (panx == 60 && pany == 7)
-                        {
-                            *_baris = 0;
-                            *_kolom = 1;
-                        }
-                        else if (panx == 66 && pany == 7)
-                        {
-                            *_baris = 0;
-                            *_kolom = 2;
-                        }
-                        else if (panx == 54 && pany == 11)
-                        {
-                            *_baris = 1;
-                            *_kolom = 0;
-                        }
-                        else if (panx == 60 && pany == 11)
-                        {
-                            *_baris = 1;
-                            *_kolom = 1;
-                        }
-                        else if (panx == 66 && pany == 11)
-                        {
-                            *_baris = 1;
-                            *_kolom = 2;
-                        }
+                            if (panx == 54 && pany == 7)
+                            {
+                                *_baris = 0;
+                                *_kolom = 0;
+                            }
+                            else if (panx == 60 && pany == 7)
+                            {
+                                *_baris = 0;
+                                *_kolom = 1;
+                            }
+                            else if (panx == 66 && pany == 7)
+                            {
+                                *_baris = 0;
+                                *_kolom = 2;
+                            }
+                            else if (panx == 54 && pany == 11)
+                            {
+                                *_baris = 1;
+                                *_kolom = 0;
+                            }
+                            else if (panx == 60 && pany == 11)
+                            {
+                                *_baris = 1;
+                                *_kolom = 1;
+                            }
+                            else if (panx == 66 && pany == 11)
+                            {
+                                *_baris = 1;
+                                *_kolom = 2;
+                            }
 
-                        else if (panx == 54 && pany == 15)
-                        {
-                            *_baris = 2;
-                            *_kolom = 0;
-                        }
-                        else if (panx == 60 && pany == 15)
-                        {
-                            *_baris = 2;
-                            *_kolom = 1;
-                        }
-                        else if (panx == 66 && pany == 15)
-                        {
-                            *_baris = 2;
-                            *_kolom = 2;
-                        }
-                        if (_papan[*_baris][*_kolom] == ' ')
-                        {
-                            cekValid = 1;
-                        }
-                    }
-                } while (cekValid == 0);
+                            else if (panx == 54 && pany == 15)
+                            {
+                                *_baris = 2;
+                                *_kolom = 0;
+                            }
+                            else if (panx == 60 && pany == 15)
+                            {
+                                *_baris = 2;
+                                *_kolom = 1;
+                            }
+                            else if (panx == 66 && pany == 15)
+                            {
+                                *_baris = 2;
+                                *_kolom = 2;
+                            }
+                            if (_papan[*_baris][*_kolom] == ' ')
+                            {
+                                cekValid = 1;
+                            }
+                } while (cekValid == 0 && *_valid==true);
             }
 
             else if (_jenisPapan == 5)
@@ -218,10 +245,27 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                 {
                     do
                     {
-                        koor(panx, pany);
-                        printf("1");
-                        koor(0, 0);
-                        button = getch();
+                        end = time(NULL);
+                            waktu = end - start;
+                            if(count%6000==0)
+                            {
+                                koor(61,2);printf("  ");
+                                koor(61,2);printf("%.f",detik-waktu);
+                            }
+                            if(button!=0)
+                            {
+                                koor(panx, pany);
+                                printf("1");
+                                button=0;
+                            }
+                            if(button==0)
+                            {
+                                koor(0,0);
+                            }
+                            if(kbhit())
+                            {
+                            button = getch();
+                            }
                         if (button == up || button == w || button == W)
                         {
                             switch (pany)
@@ -346,8 +390,13 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                                 break;
                             }
                         }
-
-                    } while (button != 13);
+                        count++;  
+                        sleep(0.1);
+                        if(waktu==10)
+                        {
+                            *_valid=false;
+                        }
+                        } while (button != 13 && *_valid==true);
                     // baris 1
                     if (panx == 48 && pany == 7)
                     {
@@ -494,10 +543,27 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                 {
                     do
                     {
-                        koor(panx, pany);
-                        printf("1");
-                        koor(0, 0);
-                        button = getch();
+                        end = time(NULL);
+                            waktu = end - start;
+                            if(count%6000==0)
+                            {
+                                koor(61,2);printf("  ");
+                                koor(61,2);printf("%.f",detik-waktu);
+                            }
+                            if(button!=0)
+                            {
+                                koor(panx, pany);
+                                printf("1");
+                                button=0;
+                            }
+                            if(button==0)
+                            {
+                                koor(0,0);
+                            }
+                            if(kbhit())
+                            {
+                            button = getch();
+                            }
                         if (button == up || button == w || button == W)
                         {
                             switch (pany)
@@ -662,8 +728,13 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                                 break;
                             }
                         }
-
-                    } while (button != 13);
+                        count++;  
+                        sleep(0.1);
+                        if(waktu==10)
+                        {
+                            *_valid=false;
+                        }
+                        } while (button != 13 && *_valid==true);
                     // baris 1
                     if (panx == 42 && pany == 7)
                     {
@@ -942,14 +1013,31 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
             {
                 do
                 {
-                    koor(panx, pany);
-                    if(_pilihPertama==1 && _giliran%2==1 || _pilihPertama==2 && _giliran%2==0)
+                    end = time(NULL);
+                    waktu = end - start;
+                    if(count%6000==0)
                     {
-                    printf("1");
+                        koor(61,2);printf("  ");
+                        koor(61,2);printf("%.f",detik-waktu);
                     }
-                    else printf("2");
-                    koor(0, 0);
+                    if(button!=0)
+                    {
+                        koor(panx, pany);
+                        if(_pilihPertama==1 && _giliran%2==1 || _pilihPertama==2 && _giliran%2==0)
+                        {
+                        printf("1");
+                        }
+                        else printf("2");
+                        button=0;
+                    }
+                    if(button==0)
+                    {
+                        koor(0,0);
+                    }
+                    if(kbhit())
+                    {
                     button = getch();
+                    }
                     if (button == up || button == w || button == W)
                     {
                         switch (pany)
@@ -1034,7 +1122,13 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                             break;
                         }
                     }
-                } while (button != 13);
+                count++;  
+                sleep(0.1);
+                if(waktu==10)
+                {
+                    *_valid=false;
+                }
+                } while (button != 13 && *_valid==true);
                 if (panx == 54 && pany == 7)
                 {
                     *_baris = 0;
@@ -1085,7 +1179,7 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                 {
                     cekValid = 1;
                 }
-            } while (cekValid == 0);
+            } while (cekValid==0 && *_valid==true);
         }
 
         else if (_jenisPapan == 5)
@@ -1098,14 +1192,31 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
             {
                 do
                 {
-                    koor(panx, pany);
-                    if(_pilihPertama==1 && _giliran%2==1 || _pilihPertama==2 && _giliran%2==0)
+                    end = time(NULL);
+                    waktu = end - start;
+                    if(count%6000==0)
                     {
-                    printf("1");
+                        koor(61,2);printf("  ");
+                        koor(61,2);printf("%.f",detik-waktu);
                     }
-                    else printf("2");
-                    koor(0, 0);
+                    if(button!=0)
+                    {
+                        koor(panx, pany);
+                        if(_pilihPertama==1 && _giliran%2==1 || _pilihPertama==2 && _giliran%2==0)
+                        {
+                        printf("1");
+                        }
+                        else printf("2");
+                        button=0;
+                    }
+                    if(button==0)
+                    {
+                        koor(0,0);
+                    }
+                    if(kbhit())
+                    {
                     button = getch();
+                    }
                     if (button == up || button == w || button == W)
                     {
                         switch (pany)
@@ -1366,7 +1477,7 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                 {
                     cekValid = 1;
                 }
-            } while (cekValid == 0);
+            } while (cekValid==0 && *_valid==true);
         }
 
         else if (_jenisPapan == 7)
@@ -1378,14 +1489,31 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
             {
                 do
                 {
-                    koor(panx, pany);
-                    if(_pilihPertama==1 && _giliran%2==1 || _pilihPertama==2 && _giliran%2==0)
+                    end = time(NULL);
+                    waktu = end - start;
+                    if(count%6000==0)
                     {
-                    printf("1");
+                        koor(61,2);printf("  ");
+                        koor(61,2);printf("%.f",detik-waktu);
                     }
-                    else printf("2");
-                    koor(0, 0);
+                    if(button!=0)
+                    {
+                        koor(panx, pany);
+                        if(_pilihPertama==1 && _giliran%2==1 || _pilihPertama==2 && _giliran%2==0)
+                        {
+                        printf("1");
+                        }
+                        else printf("2");
+                        button=0;
+                    }
+                    if(button==0)
+                    {
+                        koor(0,0);
+                    }
+                    if(kbhit())
+                    {
                     button = getch();
+                    }
                     if (button == up || button == w || button == W)
                     {
                         switch (pany)
@@ -1808,8 +1936,8 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                 {
                     cekValid = 1;
                 }
-            }
-            while (cekValid == 0);
+            
+            } while (cekValid==0 && *_valid==true);
         }
     }
 }

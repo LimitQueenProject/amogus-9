@@ -89,7 +89,7 @@ void scanNama( char (*_namaPlayer)[20]);
 void playgame(Game *game, int *_pemenang);
 
 // PILIH INDEX > DONE
-void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPertama, char _papan[7][7], int *_baris, int *_kolom);
+void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPertama, char _papan[7][7], int *_baris, int *_kolom, bool *_valid);
 void pilihIndexKomputer( int _jenisPapan, int *_baris, int *_kolom, char _papan[7][7] );
 void medium( int _jenisPapan, int *_baris, int *_kolom, char _papan[7][7] );
 

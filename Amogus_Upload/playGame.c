@@ -14,6 +14,7 @@ void playgame(Game *game, int *_pemenang)
 
     int baris;
     int kolom;
+    bool valid;
 
     do
     {
@@ -27,12 +28,15 @@ void playgame(Game *game, int *_pemenang)
         printPapan(tempgame.papan.jenisPapan, tempgame.papan.kotak);
 
         // // 4. PILIH INDEX PAPAN
-        pilihIndexPapan(tempgame.jenisPermainanPlayer, tempgame.papan.jenisPapan, tempgame.giliran, tempgame.pilihPertama, tempgame.papan.kotak, &baris, &kolom);
+        valid=false;
+        pilihIndexPapan(tempgame.jenisPermainanPlayer, tempgame.papan.jenisPapan, tempgame.giliran, tempgame.pilihPertama, tempgame.papan.kotak, &baris, &kolom, &valid);
 
-        // // 5. MARK INDEX YANG DI PILIH
+        // // 5. MARK INDEX YANG DI 
+        if(valid==true)
         markIndex(tempgame.giliran, tempgame.pilihPertama, &tempgame.papan.kotak, baris, kolom);
 
         // // 6. CEK PEMENANG
+
         pemenang = cekPemenang(tempgame.papan.jenisPapan, tempgame.papan.kotak);
 
         // // 7. TAMBAHKAN SCORE PEMENANG JIKA ADA
