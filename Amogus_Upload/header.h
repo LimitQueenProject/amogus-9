@@ -33,7 +33,6 @@ typedef struct {
 	int giliran;
     int pilihPertama;
 	int jenisPermainanPlayer;
-	// int pemenang;
 	bool kondisiInisialisasi;
     Player pemain1; 	
     Player pemain2; 	
@@ -117,6 +116,7 @@ void tampilkanData();
 
 // HIGSCORE
 void highScore();
+void tampilHighScore(char _namaPlayer[20], int _score, int _urutanData, int _akhirData);
 
 // TEKNIS
 void setcolor(unsigned short color);
