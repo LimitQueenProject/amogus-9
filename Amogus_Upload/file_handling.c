@@ -62,6 +62,7 @@ void highScore()
     int p = getch();    
 }
 
+
 void tampilkanData()
 {
     int max_id;
@@ -168,28 +169,39 @@ void saveData(Game _game)
     Game tempGame;
     int id = _game.id_game;
 
+    // BUKA FILE DATA.DAT MODE REWIND
     file1 = fopen("data.dat", "ab");
+    // TAMBAHKAN DATA TERBARU KE BARIS PALING BAWAH
     fwrite(&_game, sizeof(Game), 1, file1);
+    // TUTUP FILE1
     fclose(file1);
 
+    // BUKA DILE DATA.DAT MODE READ
     file1 = fopen("data.dat", "rb");
+    // BUKA DILE TEMPDATA.DAT MODE REWIND
     file2 = fopen("tempData.dat", "ab");
 
+    // BACA DAN MASUKAN DATA YANG ADA PADA FILE SATU PERSATU KECUALI ID YANG AKAN DI SAVE PADA FILE DATA.DAT
     while (fread(&tempGame, sizeof(Game), 1, file1))
     {
         if (tempGame.id_game != id)
         {
+            // MASUKAN DATA KECUALI DATA YANG SAMA DENGAN ID GAME YANG AKAN DISIMPAN
             fwrite(&tempGame, sizeof(Game), 1, file2);
         }
     }
+    // SIMPAN DATA TERBARU KE BARIS PALING BAWAH PADA TEMPDATA.DAT
     fwrite(&_game, sizeof(Game), 1, file2);
     koor(55,28);
     printf("\n\tYour data has been saved\n");
     sleep(2);
     koor(55,28);
     printf("\n\t                         \n");
+    // TUTUP FILE DATA.DAT DAN TEMPDATA.DAT
     fclose(file1);
     fclose(file2);
+    // HAPUS DATA.DAT
     remove("data.dat");
+    // UBAH NAMA TEMPDATA.DAT MENJADI DATA.DAT
     rename("tempData.dat", "data.dat");
 }
