@@ -20,46 +20,52 @@ void highScore()
 
     // 1. CEK JUMLAH DATA YANG TERSIMPAN
     file1 = fopen("data.dat","rb");
-
-
-    // 2. SALIN NAMA DAN SCORE DARI TIAP TIAP PEMAIN
-    int i = 0;
-    while (fread(&tempGame, sizeof(Game), 1, file1))
-    {
-        strcpy(data[i].namaPlayer, tempGame.pemain1.namaPlayer);
-        data[i].score = tempGame.pemain1.score;
-        strcpy(data[i+1].namaPlayer, tempGame.pemain2.namaPlayer);
-        data[i+1].score = tempGame.pemain2.score;
-        i+=2;
-    }
-    fclose(file1);
-
-    // URUTKAN DATA DARI YANG PALING BESAR KE TERKECIL
-    for ( int j = 0; j < i; j++ )
-    {
-        for ( int k = 0; k < i-1; k++ )
+    if (file1 == NULL){
+        system("cls");
+        printf("\n\tData is empty");
+        printf("\n\tPress any button to back");
+        fclose(file1);
+        int butt = getch();
+    }else{
+        // 2. SALIN NAMA DAN SCORE DARI TIAP TIAP PEMAIN
+        int i = 0;
+        while (fread(&tempGame, sizeof(Game), 1, file1))
         {
-            if( data[k].score < data[k+1].score )
+            strcpy(data[i].namaPlayer, tempGame.pemain1.namaPlayer);
+            data[i].score = tempGame.pemain1.score;
+            strcpy(data[i+1].namaPlayer, tempGame.pemain2.namaPlayer);
+            data[i+1].score = tempGame.pemain2.score;
+            i+=2;
+        }
+        fclose(file1);
+
+        // URUTKAN DATA DARI YANG PALING BESAR KE TERKECIL
+        for ( int j = 0; j < i; j++ )
+        {
+            for ( int k = 0; k < i-1; k++ )
             {
-                tempData = data[k];
-                data[k] = data[k+1];
-                data[k+1] = tempData;
+                if( data[k].score < data[k+1].score )
+                {
+                    tempData = data[k];
+                    data[k] = data[k+1];
+                    data[k+1] = tempData;
+                }
             }
         }
-    }
-    
-    
-    if(i>5)
-    {
-        i=5;
-    }
+        
+        
+        if(i>5)
+        {
+            i=5;
+        }
 
-    system("cls");
-    for (int j = 0; j < i; j++)
-    {
-        tampilHighScore(data[j].namaPlayer, data[j].score, j, i);
+        system("cls");
+        for (int j = 0; j < i; j++)
+        {
+            tampilHighScore(data[j].namaPlayer, data[j].score, j, i);
+        }
+        int p = getch();    
     }
-    int p = getch();    
 }
 
 
@@ -106,7 +112,8 @@ void loadGame(Game *game, bool *_kondisiLoadgame)
         {
             system("cls");
             printf("\n\tData is empty");
-            getchar();
+            printf("\n\tPress any button to back");
+            int butt = getch();
         }
         else{
             tampilkanData();

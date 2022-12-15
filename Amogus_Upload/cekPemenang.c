@@ -3,7 +3,7 @@
 
 #include "header.h"
 
-int cekPemenang(Pemenang belum diketahui)
+int cekPemenang(int _jenisPapan, char kotak[7][7])
 {
     int baris;
     int kolom;
