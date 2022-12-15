@@ -54,9 +54,9 @@ void highScore()
         }
         
         
-        if(i>5)
+        if(i>10)
         {
-            i=5;
+            i=10;
         }
 
         system("cls");
