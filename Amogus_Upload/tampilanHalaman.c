@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <windows.h>
-#include <string.h>
 
 #include "header.h"
 
@@ -178,7 +177,7 @@ void tampilSetelahBermain()
 	koor(94,9);  printf("Choose Board");
 	koor(94,11); printf("Save");
 	koor(94,13); printf("Back to Menu");
-	koor(94,15); printf("Swap Turn");
+	koor(94,15); printf("Cho");
 }
 
 
@@ -273,34 +272,7 @@ void inputNama( int _jenisPermainanPlayer, char (*_namaPlayer1)[20], char (*_nam
     }
 }
 
-void tampilHighScore(char _namaPlayer[20], int _score, int _urutanData, int _akhirData)
+void scanNama( char (*_namaPlayer)[20])
 {
-    // Menampilkan banner 2
-    banner2();
-
-    // Menampilkan papan highscore
-    koor(47,13); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",218,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,191);
-    koor(47,14); printf("%c Top 10 Highest Point %c", 179, 179);
-    koor(47,15); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,217);
-
-    int pany = 17;
-
-    if(_urutanData == 0 || _urutanData == _akhirData)
-    {
-        koor(37,pany);   printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",218,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,194,196,196,196,191);
-        koor(37,pany+1); printf("%c %s",179,_namaPlayer);
-        koor(76,pany+1); printf("%c %d %c",179,_score,179);
-        koor(37,pany+2); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,217);
-    }
-    
-    else 
-    {
-        pany = pany + _urutanData * 2;
-        koor(37,pany);   printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",195,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,197,196,196,196,180);
-        koor(37,pany+1); printf("%c %s",179,_namaPlayer);
-        koor(76,pany+1); printf("%c %d %c",179,_score,179);
-        koor(37,pany+2); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,193,196,196,196,217);
-    }
-
-    koor(10,32); printf("press any key to continue");
+ scanf(" %[^\n]", (*_namaPlayer));
 }

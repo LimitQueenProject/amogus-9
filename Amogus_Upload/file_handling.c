@@ -20,54 +20,53 @@ void highScore()
 
     // 1. CEK JUMLAH DATA YANG TERSIMPAN
     file1 = fopen("data.dat","rb");
-    if (file1 == NULL){
-        system("cls");
-        printf("\n\tData is empty");
-        printf("\n\tPress any button to back");
-        fclose(file1);
-        int butt = getch();
-    }else{
-        // 2. SALIN NAMA DAN SCORE DARI TIAP TIAP PEMAIN
-        int i = 0;
-        while (fread(&tempGame, sizeof(Game), 1, file1))
-        {
-            strcpy(data[i].namaPlayer, tempGame.pemain1.namaPlayer);
-            data[i].score = tempGame.pemain1.score;
-            strcpy(data[i+1].namaPlayer, tempGame.pemain2.namaPlayer);
-            data[i+1].score = tempGame.pemain2.score;
-            i+=2;
-        }
-        fclose(file1);
 
-        // URUTKAN DATA DARI YANG PALING BESAR KE TERKECIL
-        for ( int j = 0; j < i; j++ )
+
+    // 2. SALIN NAMA DAN SCORE DARI TIAP TIAP PEMAIN
+    int i = 0;
+    while (fread(&tempGame, sizeof(Game), 1, file1))
+    {
+        strcpy(data[i].namaPlayer, tempGame.pemain1.namaPlayer);
+        data[i].score = tempGame.pemain1.score;
+        strcpy(data[i+1].namaPlayer, tempGame.pemain2.namaPlayer);
+        data[i+1].score = tempGame.pemain2.score;
+        i+=2;
+    }
+    fclose(file1);
+
+    // URUTKAN DATA DARI YANG PALING BESAR KE TERKECIL
+    for ( int j = 0; j < i; j++ )
+    {
+        for ( int k = 0; k < i-1; k++ )
         {
-            for ( int k = 0; k < i-1; k++ )
+            if( data[k].score < data[k+1].score )
             {
-                if( data[k].score < data[k+1].score )
-                {
-                    tempData = data[k];
-                    data[k] = data[k+1];
-                    data[k+1] = tempData;
-                }
+                tempData = data[k];
+                data[k] = data[k+1];
+                data[k+1] = tempData;
             }
         }
-        
-        
-        if(i>5)
-        {
-            i=5;
-        }
-
-        system("cls");
-        for (int j = 0; j < i; j++)
-        {
-            tampilHighScore(data[j].namaPlayer, data[j].score, j, i);
-        }
-        int p = getch();    
     }
-}
 
+    system("cls");
+    banner2();
+    printf("\n\n\tTop 10 Highest Point\n\n");
+    if(i>10)
+    {
+        i=10;
+    }
+    for (int j = 0; j < i; j++)
+    {
+        printf("%d. %s",j+1, data[j].namaPlayer);
+        for(int x=0;x<5-strlen(data[j].namaPlayer)/5;x++)
+        {
+            printf("\t");
+        }
+        printf("| %d\n", data[j].score);
+    }
+    printf("\n\npress any key to continue");
+    int p = getch();    
+}
 
 void tampilkanData()
 {
@@ -112,8 +111,7 @@ void loadGame(Game *game, bool *_kondisiLoadgame)
         {
             system("cls");
             printf("\n\tData is empty");
-            printf("\n\tPress any button to back");
-            int butt = getch();
+            getchar();
         }
         else{
             tampilkanData();
@@ -176,39 +174,28 @@ void saveData(Game _game)
     Game tempGame;
     int id = _game.id_game;
 
-    // BUKA FILE DATA.DAT MODE REWIND
     file1 = fopen("data.dat", "ab");
-    // TAMBAHKAN DATA TERBARU KE BARIS PALING BAWAH
     fwrite(&_game, sizeof(Game), 1, file1);
-    // TUTUP FILE1
     fclose(file1);
 
-    // BUKA DILE DATA.DAT MODE READ
     file1 = fopen("data.dat", "rb");
-    // BUKA DILE TEMPDATA.DAT MODE REWIND
     file2 = fopen("tempData.dat", "ab");
 
-    // BACA DAN MASUKAN DATA YANG ADA PADA FILE SATU PERSATU KECUALI ID YANG AKAN DI SAVE PADA FILE DATA.DAT
     while (fread(&tempGame, sizeof(Game), 1, file1))
     {
         if (tempGame.id_game != id)
         {
-            // MASUKAN DATA KECUALI DATA YANG SAMA DENGAN ID GAME YANG AKAN DISIMPAN
             fwrite(&tempGame, sizeof(Game), 1, file2);
         }
     }
-    // SIMPAN DATA TERBARU KE BARIS PALING BAWAH PADA TEMPDATA.DAT
     fwrite(&_game, sizeof(Game), 1, file2);
     koor(55,28);
     printf("\n\tYour data has been saved\n");
     sleep(2);
     koor(55,28);
     printf("\n\t                         \n");
-    // TUTUP FILE DATA.DAT DAN TEMPDATA.DAT
     fclose(file1);
     fclose(file2);
-    // HAPUS DATA.DAT
     remove("data.dat");
-    // UBAH NAMA TEMPDATA.DAT MENJADI DATA.DAT
     rename("tempData.dat", "data.dat");
 }
