@@ -6,6 +6,65 @@
 
 #include "header.h"
 
+// void playgame(Game *game, int *_pemenang)
+// {
+//     Game tempgame;
+//     // tempgame = *game;
+//     // int pemenang = *_pemenang;
+
+//     int baris;
+//     int kolom;
+//     bool valid;
+
+//     do
+//     {
+//         // 1. BERSIHKAN LAYAR
+//         system("cls");
+
+//         // // 2. TAMPILKAN DASHBOARD KE LAYAR
+//         dashboard(game->pemain1.namaPlayer, game->pemain2.namaPlayer, game->pilihPertama, game->giliran, game->pemain1.score, game->pemain2.score, game->id_game);
+
+//         // // 3. TAMPILKAN PAPAN {JENIS PAPAN} KE LAYAR
+//         printPapan(game->papan.jenisPapan, game->papan.kotak);
+
+//         // // 4. PILIH INDEX PAPAN
+//         valid=false;
+//         pilihIndexPapan(game->jenisPermainanPlayer, game->papan.jenisPapan, game->giliran, game->pilihPertama, game->papan.kotak, &baris, &kolom, &valid);
+
+//         // // 5. MARK INDEX YANG DI 
+//         if(valid==true)
+//         markIndex(game->giliran, game->pilihPertama, &game->papan.kotak, baris, kolom);
+
+//         // // 6. CEK PEMENANG
+
+//         *_pemenang = cekPemenang(game->papan.jenisPapan, game->papan.kotak);
+
+//         // // 7. TAMBAHKAN SCORE PEMENANG JIKA ADA
+//         if ( *_pemenang == 1 ){
+//             game->pemain1.score++;
+//         }
+//         else if ( *_pemenang == 2 ){
+//             game->pemain2.score++;
+//         }
+
+//         // // 8. GANTI GILIRAN
+//         game->giliran++;
+
+//     } while (*_pemenang == -1 && game->giliran <= game->papan.jenisPapan*game->papan.jenisPapan);
+        
+//         // 1. BERSIHKAN LAYAR
+//         system("cls");
+
+//         // // 2. TAMPILKAN DASHBOARD KE LAYAR
+//         dashboard(game->pemain1.namaPlayer, game->pemain2.namaPlayer, game->pilihPertama, game->giliran, game->pemain1.score, game->pemain2.score, game->id_game);
+
+//         // // 3. TAMPILKAN PAPAN {JENIS PAPAN} KE LAYAR
+//         printPapan(game->papan.jenisPapan, game->papan.kotak);
+
+//     // *game = tempgame;
+//     // *_pemenang = pemenang;
+    
+// }
 void playgame(Game *game, int *_pemenang)
 {
     Game tempgame;

@@ -10,22 +10,25 @@ int isiID()
 {
     bool kosong = false;
     int id_sementara = 1;
-
+    // BUKA FILE
     FILE *file;
     file = fopen("id.dat", "rb");
+    // CEK FILE JIKA KOSONG
     if ( file == NULL )
     {
-        // printf("Kosong");
-        // int i = getch();
         kosong = true;
     }
+    // TUTUP FILE SETELAH DIBUKA
     fclose(file);
+    // JIKA DATA MASIH KOSONG MAKA ISI DATA DENGAN ANGKA DEFAULT 1
     if ( kosong )
     {
         file = fopen("id.dat", "wb");
         fwrite(&id_sementara, sizeof(int), 1, file);
+    // TUTUP FILE SETELAH DIBUKA
         fclose(file);
     }
+    // JIKA DATA SUDAH TERISI MAKA AMBIL NILAI ID TERAKHIR DAN TAMBAHKAN 1
     else if ( !kosong )
     {
         

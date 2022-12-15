@@ -212,7 +212,6 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                                 *_baris = 1;
                                 *_kolom = 2;
                             }
-
                             else if (panx == 54 && pany == 15)
                             {
                                 *_baris = 2;
@@ -531,7 +530,7 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                     {
                         cekValid = 1;
                     }
-                } while (cekValid == 0);
+                } while (cekValid == 0 && *_valid==true);
             }
 
             else if (_jenisPapan == 7)
@@ -991,7 +990,7 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                     {
                         cekValid = 1;
                     }
-                }while (cekValid == 0);
+                } while (cekValid == 0 && *_valid==true);
             }
         }
     }
@@ -1159,7 +1158,6 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                     *_baris = 1;
                     *_kolom = 2;
                 }
-
                 else if (panx == 54 && pany == 15)
                 {
                     *_baris = 2;
