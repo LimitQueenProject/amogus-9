@@ -9,27 +9,27 @@
 #include "header.h"
 
 
-// void pilihIndexKomputer( int _jenisPapan, int *_baris, int *_kolom, char _papan[7][7] )
-// {
-//     int randomBaris;
-//     int randomKolom;
-//     bool validIndex = false ;
+void pilihIndexKomputer( int _jenisPapan, int *_baris, int *_kolom, char _papan[7][7] )
+{
+    int randomBaris;
+    int randomKolom;
+    bool validIndex = false ;
 
-//     do{
-//         // BUAT BIBIT ANGKA
-//         srand(time(0));
-//         // RANDOM BARIS DAN KOLOM
-//         randomBaris = rand() % _jenisPapan;
-//         randomKolom = rand() % _jenisPapan;
-//         // CEK KEVALIDAN INDEX 
-//         if ( _papan[randomBaris][randomKolom] == ' ' )
-//         {
-//             validIndex = true;
-//             *_baris = randomBaris;
-//             *_kolom = randomKolom;
-//         }
-//     }while(validIndex == false);
-// }
+    do{
+        // BUAT BIBIT ANGKA
+        srand(time(0));
+        // RANDOM BARIS DAN KOLOM
+        randomBaris = rand() % _jenisPapan;
+        randomKolom = rand() % _jenisPapan;
+        // CEK KEVALIDAN INDEX 
+        if ( _papan[randomBaris][randomKolom] == ' ' )
+        {
+            validIndex = true;
+            *_baris = randomBaris;
+            *_kolom = randomKolom;
+        }
+    }while(validIndex == false);
+}
 
 
 
@@ -49,7 +49,7 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
             int baris = *_baris;
             int kolom = *_kolom;
             // pilihIndexKomputer(_jenisPapan, &baris, &kolom, _papan);
-            pilihIndexKomputer(_jenisPapan, &baris, &kolom, _papan);
+            medium(_jenisPapan, &baris, &kolom, _papan);
             *_baris = baris;
             *_kolom = kolom;
         }
@@ -1339,7 +1339,12 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                             break;
                         }
                     }
-
+                count++;  
+                sleep(0.1);
+                if(waktu==10)
+                {
+                    *_valid=false;
+                }
                 } while (button != 13);
                 // baris 1
                 if (panx == 48 && pany == 7)
@@ -1676,7 +1681,12 @@ void pilihIndexPapan(int _flagIndex, int _jenisPapan, int _giliran, int _pilihPe
                             break;
                         }
                     }
-
+                count++;  
+                sleep(0.1);
+                if(waktu==10)
+                {
+                    *_valid=false;
+                }
                 } while (button != 13);
                 // baris 1
                 if (panx == 42 && pany == 7)

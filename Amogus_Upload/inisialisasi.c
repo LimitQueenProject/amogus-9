@@ -10,25 +10,22 @@ int isiID()
 {
     bool kosong = false;
     int id_sementara = 1;
-    // BUKA FILE
+
     FILE *file;
     file = fopen("id.dat", "rb");
-    // CEK FILE JIKA KOSONG
     if ( file == NULL )
     {
+        // printf("Kosong");
+        // int i = getch();
         kosong = true;
     }
-    // TUTUP FILE SETELAH DIBUKA
     fclose(file);
-    // JIKA DATA MASIH KOSONG MAKA ISI DATA DENGAN ANGKA DEFAULT 1
     if ( kosong )
     {
         file = fopen("id.dat", "wb");
         fwrite(&id_sementara, sizeof(int), 1, file);
-    // TUTUP FILE SETELAH DIBUKA
         fclose(file);
     }
-    // JIKA DATA SUDAH TERISI MAKA AMBIL NILAI ID TERAKHIR DAN TAMBAHKAN 1
     else if ( !kosong )
     {
         
@@ -120,12 +117,6 @@ void inisialisasi( Game *game, int *_pemenang )
 // Inisialisasi
     game->kondisiInisialisasi = false;
 }
-
-void scanNama( char (*_namaPlayer)[20])
-{
- scanf(" %[^\n]", (*_namaPlayer));
-}
-
 // void inisialisasi( char (*_namaPlayer1)[20], char (*_namaPlayer2)[20], int *_id, int *_giliran, int *_score1, int *_score2, char (*_kotak)[7][7], int _jenisPlayer )
 // {
     
