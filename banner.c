@@ -103,6 +103,7 @@ void dashboard(char _namaPlayer1[100], char _namaPlayer2[100], int _pertama, int
 
 	koor(56, 4);
 	printf("Turn : %d ", _giliran);
+<<<<<<< HEAD
 	if (_giliran %2 == 1 &&  _pertama==1 || _giliran %2 == 0 &&  _pertama==2)
 	{
 	koor(56, 5);
@@ -116,6 +117,18 @@ void dashboard(char _namaPlayer1[100], char _namaPlayer2[100], int _pertama, int
 		printf("                                                              ");
 	koor(56, 5);
 		printf("%s's turn", _namaPlayer2);
+=======
+	
+	if (_giliran %2 == 1 &&  _pertama==1 || _giliran %2 == 0 &&  _pertama==2)
+	{
+		koor(56, 5); printf("                                                              ");
+		koor(56, 5); printf("%s's turn", _namaPlayer1);
+	}
+	else if (_giliran %2 == 1 && _pertama==2 || _giliran %2 == 0 && _pertama==1)
+	{
+		koor(56, 5); printf("                                                              ");
+		koor(56, 5); printf("%s's turn", _namaPlayer2);
+>>>>>>> 39579fcda4821856a0d3ad1e2ddbf5a3d61f7308
 	}
 }
 
