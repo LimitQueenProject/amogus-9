@@ -138,7 +138,8 @@ Index pilihIndexKomputer( int _jenisPapan, Index _indexPilihIndexKomputer, char 
     // blok index yang membangun deret yang sama
 
     for( i = 1; i <= 8; i++ ){
-        if( index[i].kondisiIndexValid == true && 
+        if( index[i].kondisiIndexValid == true &&
+            index[(i+4)%9].kondisiIndexValid == true &&
             _papan[index[i].indexValid.baris][index[i].indexValid.kolom] == 'X' && 
             _papan[index[(i+4)%9].indexValid.baris][index[(i+4)%9].indexValid.kolom] == ' ' )
         {
@@ -179,25 +180,24 @@ Index pilihIndexKomputer( int _jenisPapan, Index _indexPilihIndexKomputer, char 
 
     // random jika tidak ada yang bisa diisi
     
-    int randomBaris;
-    int randomKolom;
     bool validIndex = false ;
+    Index random[49];
+    count  = 0;
 
-    do{
-        // BUAT BIBIT ANGKA
-        srand(time(0));
-        // RANDOM BARIS DAN KOLOM
-        randomBaris = rand() % _jenisPapan;
-        randomKolom = rand() % _jenisPapan;
-        // CEK KEVALIDAN INDEX 
-        if ( _papan[randomBaris][randomKolom] == ' ' )
-        {
-            validIndex = true;
-            indexKomputer[0].baris = randomBaris;
-            indexKomputer[0].kolom = randomKolom;
-            return indexKomputer[0];
+    for( i = 0; i < _jenisPapan; i++){
+        for( j = 0; j < _jenisPapan; j++ ){
+            if( _papan[i][j] == ' ' ){
+                random[count].baris = i;
+                random[count].kolom = j;
+                count++;
+                validIndex = true;
+            }
         }
-    }while(validIndex == false);
+    }
+
+    srand(time(0));
+    if(validIndex == true)
+        return random[rand() % count];
 
 
 

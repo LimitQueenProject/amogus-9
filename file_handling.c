@@ -137,9 +137,6 @@ void tampilkanData(int *_IDPilihanPlayer, bool *_lanjut)
     // BACA DATA DAN L
     while (fread(&_game, sizeof(Game), 1, file))
     {
-        if(count==1){
-            koor(3,12);
-        }
         printf("\n\tID Game : %d\n", _game.id_game);
         printf("\t%s VS %s\n", _game.pemain1.namaPlayer, _game.pemain2.namaPlayer);
         printf("\tScore %s\t: %d\n", _game.pemain1.namaPlayer, _game.pemain1.score);
@@ -157,7 +154,7 @@ void tampilkanData(int *_IDPilihanPlayer, bool *_lanjut)
         count++;
     }
 
-    koor(2,12); printf("List of Data");
+    koor(2,11); printf("List of Data :");
     koor(90,12); printf("Press Esc to back to the menu");
 
 
@@ -217,7 +214,7 @@ void loadGame(Game *game, bool *_kondisiLoadgame)
                     }
 
                     printf("\n\n\tLoad game ?\n\tPress Enter to load");
-                    koor(90,28); printf("Press Esc to back to menu");
+                    koor(90,28); printf("Press any key to back to menu");
                     int b = getch();
                     if (b==13){
                         *_kondisiLoadgame = true;
@@ -238,7 +235,7 @@ void loadGame(Game *game, bool *_kondisiLoadgame)
                 banner2();
                 printf("\n\n\tData not found");
                 printf("\n\tPress Enter to search another id...");
-                koor(90,28); printf("Press Esc to back to the menu");
+                koor(90,28); printf("Press any key to back to the menu");
                 int b = getch();
 
                 if( b == 13 )

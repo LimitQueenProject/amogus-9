@@ -36,9 +36,9 @@ void panahLoadGame(int _count, int _daftarID[10000], bool *_next, int *_id)
             pany -= 7;
         }
         if(pany<15 ){
-            pany += 7;
-        }else if( pany>15+7*(_count-2)){
-            pany -= 7 ;
+            pany = 15;
+        }else if( pany>15+7*(_count-1)){
+            pany = 15+7*(_count-1) ;
         }
 
         if(button==27){
