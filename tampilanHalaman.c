@@ -385,7 +385,6 @@ void tampilHighScore(char _namaPlayer[20], int _score, int _urutanData, int _akh
     {
         koor(37,pany);   printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",218,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,194,196,196,196,196,191);
         koor(37,pany+1); printf("%c %s",179,_namaPlayer);
-<<<<<<< HEAD
         if(_score>9)
         {
              koor(77,pany+1); printf("%c %d %c",179,_score,179);
@@ -396,23 +395,12 @@ void tampilHighScore(char _namaPlayer[20], int _score, int _urutanData, int _akh
         }
         
         koor(37,pany+2); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,217);
-=======
-        if(_score >9)
-        {
-            koor(76,pany+1); printf("%c %d %c",179,_score,179);
-        }
-        else 
-        {
-            koor(76,pany+1); printf("%c  %d %c",179,_score,179);
-        }
-        koor(37,pany+2); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196196196,196,196,196,196,196,196,217);
->>>>>>> 39579fcda4821856a0d3ad1e2ddbf5a3d61f7308
+
     }
     
     else 
     {
         pany = pany + _urutanData * 2;
-<<<<<<< HEAD
         koor(37,pany);   printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",195,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,197,196,196,196,196,180);
         koor(37,pany+1); printf("%c %s",179,_namaPlayer);
         if(_score>9)
@@ -424,20 +412,6 @@ void tampilHighScore(char _namaPlayer[20], int _score, int _urutanData, int _akh
             koor(77,pany+1); printf("%c  %d %c",179,_score,179);
         }
         koor(37,pany+2); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,193,196,196,196,196,217);
-=======
-        koor(37,pany);   printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",195,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196196,196,197,196,196,196,180);
-        koor(37,pany+1); printf("%c %s",179,_namaPlayer);
-        if(_score >9)
-        {
-            koor(76,pany+1); printf("%c %d %c",179,_score,179);
-        }
-        else 
-        {
-            koor(76,pany+1); printf("%c  %d %c",179,_score,179);
-        }
-        
-        koor(37,pany+2); printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",192,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,196,193,196,196,196,217);
->>>>>>> 39579fcda4821856a0d3ad1e2ddbf5a3d61f7308
     }
 
     koor(10,32); printf("press any key to continue");
